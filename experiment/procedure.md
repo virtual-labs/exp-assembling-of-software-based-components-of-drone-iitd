@@ -2,7 +2,7 @@
 
 #### Assembling of Drone's Sofware Based Components
 #### Click Here to Enter the Lab
-
+<!--
 #### Precautions:
 #### 1. No cell phone or ear phone usage in the laboratories.  
 #### 2. Know locations of laboratory safety showers, eyewashstations, and fire extinguishers
@@ -14,7 +14,7 @@
 #### 8. Do not make circuit changes or perform any wiring when power is on.
 #### 9. All equipment should be regularly inspected for wear or deterioration.
 #### 10. Know emergency exit routes.
-
+-->
 #### Drag NAZA flight controller and put it on the tape to fix it with the plate.
 
 #### Drag PMU wire and plug it in the X3 port of NAZA flight controller.
