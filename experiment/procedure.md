@@ -143,12 +143,10 @@
 #### Drag Allen key and drop it on the screw to tight both screws.
 #### <img src="images/d22.png" style="height: 500px;">
 
+#### NOTE :Repeat the same process with other three gears.
 ### click the next button
 #### <img src="images/n8.png" style="height: 500px;">
 
-#### The landing gear adds an extra protection to your flying platform and all other precious equipment.
-
-#### NOTE :Repeat the same process with other three gears.
 ### Choose the option and click on the submit button
 #### <img src="images/s4.png" style="height: 500px;">
 
@@ -170,6 +168,7 @@
 #### Drag wrench and put it on the propeller nut to tight the nut.
 #### <img src="images/d25.png" style="height: 500px;">
 
+#### NOTE :Repeat the same process with other three propellers.
 ### click the next button
 #### <img src="images/n10.png" style="height: 500px;">
 
