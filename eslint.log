@@ -1,0 +1,119 @@
+
+/home/runner/work/exp-assembling-of-software-based-components-of-drone-iitd/exp-assembling-of-software-based-components-of-drone-iitd/experiment/simulation/jquery/1.11.2/draganddrop.js
+  111:6   warning  Unnecessary semicolon                                                      no-extra-semi
+  118:29  warning  'evt' is defined but never used                                            no-unused-vars
+  202:30  warning  Irregular whitespace not allowed                                           no-irregular-whitespace
+  281:29  warning  'evt' is defined but never used                                            no-unused-vars
+  304:17  warning  '$droptarget' is assigned a value but never used                           no-unused-vars
+  426:22  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  429:23  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  667:51  warning  Irregular whitespace not allowed                                           no-irregular-whitespace
+  688:5   warning  'define' is not defined                                                    no-undef
+  690:13  warning  'jQuery' is not defined                                                    no-undef
+
+/home/runner/work/exp-assembling-of-software-based-components-of-drone-iitd/exp-assembling-of-software-based-components-of-drone-iitd/experiment/simulation/jquery/1.11.2/jquery-ui.min.js
+   6:41     warning  'define' is not defined                                                    no-undef
+   6:52     warning  'define' is not defined                                                    no-undef
+   6:75     warning  'jQuery' is not defined                                                    no-undef
+   6:7244   warning  Empty block statement                                                      no-empty
+   6:8519   warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+   6:17080  warning  Unnecessary escape character: \+                                           no-useless-escape
+   6:17082  warning  Unnecessary escape character: \-                                           no-useless-escape
+   7:7843   warning  Unnecessary escape character: \-                                           no-useless-escape
+   7:7845   warning  Unnecessary escape character: \[                                           no-useless-escape
+   7:7860   warning  Unnecessary escape character: \^                                           no-useless-escape
+   7:15290  warning  Unnecessary escape character: \-                                           no-useless-escape
+   7:15292  warning  Unnecessary escape character: \[                                           no-useless-escape
+   7:15307  warning  Unnecessary escape character: \^                                           no-useless-escape
+   7:23409  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:331    warning  Empty block statement                                                      no-empty
+   8:11679  warning  Empty block statement                                                      no-empty
+   8:11814  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:20003  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:20052  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:22033  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:22063  warning  Unnecessary escape character: \-                                           no-useless-escape
+   8:25625  warning  Empty block statement                                                      no-empty
+   9:30436  warning  Empty block statement                                                      no-empty
+  10:14086  warning  Unnecessary escape character: \-                                           no-useless-escape
+  10:14279  warning  Unnecessary escape character: \%                                           no-useless-escape
+  10:14303  warning  Unnecessary escape character: \%                                           no-useless-escape
+  10:14327  warning  Unnecessary escape character: \%                                           no-useless-escape
+  10:14742  warning  Unnecessary escape character: \%                                           no-useless-escape
+  10:14766  warning  Unnecessary escape character: \%                                           no-useless-escape
+  10:19122  warning  Empty block statement                                                      no-empty
+  10:19213  warning  Empty block statement                                                      no-empty
+  12:4270   warning  Unnecessary escape character: \-                                           no-useless-escape
+  12:25549  warning  'Globalize' is not defined                                                 no-undef
+  12:25706  warning  'Globalize' is not defined                                                 no-undef
+  12:27332  warning  Empty block statement                                                      no-empty
+  12:27370  warning  Empty block statement                                                      no-empty
+  12:30392  warning  Unnecessary escape character: \/                                           no-useless-escape
+  12:30401  warning  Unnecessary escape character: \[                                           no-useless-escape
+  12:30405  warning  Unnecessary escape character: \^                                           no-useless-escape
+  13:1143   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  13:9206   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+
+/home/runner/work/exp-assembling-of-software-based-components-of-drone-iitd/exp-assembling-of-software-based-components-of-drone-iitd/experiment/simulation/jquery/1.11.2/jquery.min.js
+  2:58     warning  'module' is not defined                                                    no-undef
+  2:73     warning  'module' is not defined                                                    no-undef
+  2:6389   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:6622   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7072   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7304   warning  Empty block statement                                                      no-empty
+  2:7869   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:9753   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11309  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11885  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:11923  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12327  warning  Empty block statement                                                      no-empty
+  2:12890  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13202  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15025  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15263  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15411  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:15749  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  2:16454  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18840  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18929  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:18989  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20255  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20830  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20938  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:22957  warning  Unnecessary escape character: \[                                           no-useless-escape
+  2:22959  warning  Unnecessary escape character: \.                                           no-useless-escape
+  2:30650  warning  Empty block statement                                                      no-empty
+  2:31892  warning  Empty block statement                                                      no-empty
+  3:4950   warning  Empty block statement                                                      no-empty
+  3:7951   warning  Empty block statement                                                      no-empty
+  3:10571  warning  Empty block statement                                                      no-empty
+  3:19860  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  3:19987  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  3:22132  warning  Empty block statement                                                      no-empty
+  3:26318  warning  Move function declaration to function body root                            no-inner-declarations
+  3:30101  warning  Empty block statement                                                      no-empty
+  4:2091   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:4545   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:10638  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:12534  warning  Empty block statement                                                      no-empty
+  4:13833  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:14277  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:14691  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:15794  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:16285  warning  'ActiveXObject' is not defined                                             no-undef
+  4:16669  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:16681  warning  Unnecessary escape character: \/                                           no-useless-escape
+  4:16980  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:19469  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:21369  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  4:26181  warning  Empty block statement                                                      no-empty
+  4:26258  warning  Empty block statement                                                      no-empty
+  4:31572  warning  'define' is not defined                                                    no-undef
+  4:31584  warning  'define' is not defined                                                    no-undef
+
+/home/runner/work/exp-assembling-of-software-based-components-of-drone-iitd/exp-assembling-of-software-based-components-of-drone-iitd/experiment/simulation/main.js
+  304:10  error  Parsing error: Identifier 'navNext3_skp' has already been declared
+
+✖ 107 problems (1 error, 106 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

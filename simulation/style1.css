@@ -1,0 +1,176 @@
+
+/*==================CANVAS11================================*/
+
+/*=======================================*/
+
+@keyframes arowdwn_canshk
+
+{
+
+    0% { left: 405px; }
+
+    50% { left: 415px; }
+
+    100% { left: 405px; }
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes arowdwn_canshk
+
+{
+
+    0% { left: 405px; }
+
+    50% { left: 415px; }
+
+    100% { left: 405px; }
+
+}
+
+
+/*=======================================*/
+
+@keyframes arowdwn_can11shk2
+
+{
+
+    0% { left: 535px; }
+
+    50% { left: 525px; }
+
+    100% { left: 535px; }
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes arowdwn_can11shk2
+
+{
+
+    0% { left: 535px; }
+
+    50% { left: 525px; }
+
+    100% { left: 535px; }
+
+}
+
+/*=======================================*/
+
+@keyframes arowdwn_can11shk4
+
+{
+
+    0% { left: 560px; }
+
+    50% { left: 550px; }
+
+    100% { left: 560px; }
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes arowdwn_can11shk4
+
+{
+
+    0% { left: 560px; }
+
+    50% { left: 550px; }
+
+    100% { left: 560px; }
+
+}
+
+/*=======================================*/
+
+@keyframes arowdwn_can11shk6
+
+{
+
+    0% { left: 580px; }
+
+    50% { left: 570px; }
+
+    100% { left: 580px; }
+}
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes arowdwn_can11shk6
+
+{
+
+    0% { left: 580px; }
+
+    50% { left: 570px; }
+
+    100% { left: 580px; }
+
+}
+
+
+/*=========================================Wire============================================*/
+
+
+#svg_can11 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid black;
+}
+.handle_can11 {
+  /*fill: #A4AFB0;*/
+  fill: #0f0f0f;
+}
+
+.path_can11 {
+  fill: none;
+  stroke: #fcd443;;
+  stroke-width: 9;
+}
+
+
+#svg2_can11 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid black;
+}
+.handle2_can11 {
+  /*fill: #A4AFB0;*/
+  fill: #0f0f0f;
+}
+
+.path2_can11 {
+  fill: none;
+  stroke: black;
+  stroke-width: 9;
+}
+
+#svg3_can11 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid black;
+}
+.handle3_can11 {
+  /*fill: #A4AFB0;*/
+  fill: #0f0f0f;
+}
+
+.path3_can11 {
+  fill: none;
+  stroke: rgb(255, 39, 39);
+  stroke-width: 9;
+}

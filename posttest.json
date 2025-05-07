@@ -1,0 +1,89 @@
+{
+  "version": 2.0,
+  "questions": [{
+      "question": "1. PDB stands for?",
+      "answers": {
+        "a": "Power Distribution Board",
+        "b": "Process Distribution Board",
+        "c": "Power Data Bank",
+        "d": "Process data Bank"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. 4 channels  of transmitter necessarily needed?",
+      "answers": {
+        "a": "Aux1 , S1, Pitch, Roll",
+        "b": "Throttle, Yaw, Pitch, Roll",
+        "c": "Throttle, Pitch, Aux1, Roll",
+        "d": "Yaw, Pitch, Roll, Aux1"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. Main Control Mother Board of drone is called?",
+      "answers": {
+        "a": "Flight Controller",
+        "b": "Microcontroller",
+        "c": "Microprocessor",
+        "d": "Power Controller"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. General  frequency  band of transmitter used in drones is?",
+      "answers": {
+        "a": "5.8Ghz",
+        "b": "2.4Ghz",
+        "c": "9Mhz",
+        "d": "10Ghz"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Always pre check connection of wires before powering up drone  very  first  time with.",
+      "answers": {
+        "a": "Multimeter",
+        "b": "Voltmeter",
+        "c": "Ammeter",
+        "d": "Potentiometer"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
