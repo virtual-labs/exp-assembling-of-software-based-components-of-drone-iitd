@@ -19,11 +19,18 @@ The first step to building a drone is to understand the components that it requi
 every drone consist of following basic and essential parts<br>
 
 
-#### PDB (Power Distribution Board)
+#### PDB(Power Distribution Board)
 
-PDB stands for Power Distribution Board and it is often where the battery power lead (i.e.. XT60) is connected. As its name suggests, the PDB distributes power to the components at the voltages they require. These days the necessity of using a PDB is being negated by FC’s, ESC’s and other (dubbed AIO or All-In-One) components providing the same function. These components have a wide input voltage range and can be connected to battery voltage (aka VBAT), they can then output a stable voltage i.e.. 5v to power an FPV camera or other components.<br>
-Builders tip: Make sure that your PDB is actually necessary, nowadays it is likely that you will be able to distribute power to your components by other means. I.e.. some VTX have a wide input range and can output a regulated 5v to power your FPV camera.<br>
-Note : AIO is a common term used for components that can fulfil more than 1 function, i.e.. an AIO FPV camera will be a camera and VTX (video transmitter) integrated into one unit.
+PDB stands for Power Distribution Board, and it is often where the battery power lead is connected. The connection is done such that the female connector in the battery wire is plugged into the male connector in the PDB (usually the connectors used are XT60 types).
+
+These days, the necessity of using a PDB is being reduced because FCs, ESCs, and other components (often called AIO or All-In-One) can perform the same function. These components have a wide input voltage range and can be connected to the battery voltage (aka VBAT). They can then output a stable voltage, i.e., 5V, to power an FPV camera or other components.
+
+##### Builder’s Tip:
+Make sure your PDB is actually necessary. Nowadays, it’s likely that you can distribute power to your components by other means. For example, some VTXs have a wide input range and can output a regulated 5V to power your FPV camera.
+
+##### Note:
+AIO is a common term used for components that can fulfill more than one function. For example, an AIO FPV camera is a camera and VTX (video transmitter) integrated into one unit.
+
 
 <br> 
 <img src="images/th2.jpg" style="height: 300px;">
@@ -34,7 +41,7 @@ Note : AIO is a common term used for components that can fulfil more than 1 func
 These are used in interconnection of various components of drone like PBD's,FLV's etc.
 
 <br>
-<img src="images/th15.png" style="height: 200px;">
+<img src="images/u_connectors.png" style="height: 200px;">
 <br>
 
 #### RX (Radio reciever)
@@ -59,6 +66,19 @@ The Flight Controller (aka “FC”) is the brain of a quadcopter, it has sensor
 <br> 
 <img src="images/th3.jpg" style="height: 300px;">
 <br>
+
+#### Roles of a Flight Controller (FC) in a Drone
+
+- **Sensor Data Processing** – Collects and processes data from accelerometers, gyroscopes, barometers, and GPS for stable flight.
+- **Stability and Balance Control** – Adjusts motor speeds to maintain level flight and counteract external forces like wind.
+- **Flight Mode Management** – Supports different flight modes such as manual, altitude hold, GPS-assisted, and autonomous modes.
+- **Motor and ESC Control** – Sends precise signals to ESCs, which regulate motor speed for smooth maneuvering.
+- **Navigation and Positioning** – Works with GPS and other sensors to enable autonomous navigation and waypoint missions.
+- **Failsafe Functions** – Activates Return-to-Home (RTH) and emergency landing features in case of signal loss or low battery.
+- **Communication with Remote Controller** – Receives pilot commands and translates them into drone movements.
+- **Telemetry and Data Logging** – Records flight data, battery status, and sensor readings for monitoring and analysis.
+- **Obstacle Avoidance** – In advanced drones, integrates with sensors to detect and avoid obstacles.
+- **Payload Management** – Helps control attached devices like cameras, gimbals, or delivery payloads.
 
 Builders tip : If you are using an FC with an integrated PDB then all 4 wires going to the ESC input will come from the FC. 4-in-1 ESC’s are becoming popular as they can shave a few grams off your AUW (All Up Weight or takeoff weight inc. Battery and other peripherals). A 4-in-1 ESC can connect to the FC in different ways, and they are not universal – Unless you know exactly what you are getting, I advise you purchase a 4-in-1 ESC as a stack combined with the FC such as the Holybro Kakute FC and tekkoS 4-in-1 ESC.
 
@@ -96,17 +116,26 @@ Builders tip: The battery is the single heaviest component of your quad, just be
 
 #### Battery strip
 
-Battery strip is used to bind battery with the centre of drone surface.
+Battery strip is used to bind the battery with the drone. Note, all these arrangements are made such that the center of mass of the drone is aligned and not shifted towards any particular side.
 <br>
 <img src="images/th21.png" style="height: 100px;">
 <br>
 
 #### GPS module
 
-GPS module that allows them to know their location relative to a network of orbiting satellites.Connecting to signals from these satellites allows the drone to perform functions such as position hold,autonomous flight,return to home , and waypoint navigation.
+GPS (Global Positioning System) is an essential component in drones, enabling precise navigation and autonomous flight. It allows the drone to determine its real-time location, altitude, and speed by receiving signals from multiple satellites.
 <br>
 <img src="images/th16.png" style="height: 400px;">
 <br>
+
+##### Functions of GPS in Drones:
+- **Position Hold** – Helps the drone maintain a stable position in the air without drifting.
+- **Return to Home (RTH)** – Enables the drone to automatically return to its takeoff point in case of signal loss or low battery.
+- **Waypoint Navigation** – Allows the drone to follow a pre-programmed flight path for automated missions.
+- **Geofencing** – Prevents drones from flying into restricted or dangerous areas by setting virtual boundaries.
+- **Speed and Altitude Monitoring** – Provides real-time flight data, ensuring controlled and safe operation.
+- **Enhanced Stability** – Improves flight accuracy, especially in windy conditions, by continuously adjusting position.
+
 
 #### GPS module stand
 

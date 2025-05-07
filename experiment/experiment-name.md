@@ -1,1 +1,1 @@
-## Assembling of Software Based Components of Drone
+## Assembling of Software-Based Components of a Drone
