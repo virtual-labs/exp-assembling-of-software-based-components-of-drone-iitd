@@ -1,13 +1,4374 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    <title>Virtual Lab</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+
+    <!-- <script type="text/javascript" src="jquerymin.js"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <script src="https://kit.fontawesome.com/afa6483c49.js" crossorigin="anonymous"></script>
+
+   <!-- <script type="text/javascript" src="main.js"></script> -->
+
+    <!-- WIRE================================================== -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Droppable.min.js"></script>
+<script>
+
+
+<!-- Drag and Drop Online Link -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+<!-- Drag and Drop Offline Link -->
+
+    <script type="text/javascript" src="jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery/1.11.2/jquery-ui.min.js"></script>
+
+<!-- /////////////// mobiledrag-droplink-->
+ 
+  <script type="text/javascript" src="jquery/1.11.2/draganddrop.js"></script>
+
+    <script>
+
+        var simsubscreennum=0;
+
+        var temp=0;
+
+    </script>
+<style type="text/css">
+  
+  #loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+  position: fixed;
+  display: block;
+  /*opacity: 0.7;*/
+  background-color: #fff;
+  z-index: 9999;
+  text-align: center;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+#loading-image {
+    position: absolute;
+top: 30%;
+left: 40%;
+}
+
+</style>
+
+</head>
+
+
+<!-- =========================================== -->
+      <!-- Don't Write Code Above This Line -->
+
+<body style=" font-family: 'Roboto Slab', serif; ">
+<table align="center">
+  <tr>
+    <td>    
+    
+<div id="loading">
+    <img id="loading-image" src="831.svg" alt="Loading..." />
+    <center>
+        <h1 style="color: indigo;">Welcome to <i>"<strong style="color: red;">Virtual Labs</strong>"</i></h1>
+        <h2>Please wait while its loading...</h2>
+    </center>
+</div>    
+
+
+<div id="simscreen" style="overflow: hidden;">
+
+<div id="title"><h3 id="titleh3">Assembling of Software Based Components of Drone</h3></div>
+
+
+<!-- ================================================================ -->
+
+ <!-- Scene start -->
+ 
+<div class="simsubscreen" id="canvas_start" style="visibility: visible; background-image: url(images/bgimag.png);" ></br>
+      
+     <!--Blinking arrowcubox  -->
+ 
+<div class="blink_me" style="    border: 4px dashed #FFF;
+    position: absolute;
+    left: 330px;
+    top: 240px;
+    height: 100px;
+    width: 570px;
+    border-radius: 30px"></div>
+
+<span onclick="navNextstrt()" style="position: absolute; left: 360px; top: 260px; font-family: 'Acme', sans-serif; font-size: 50px; color: white; ">Click Here to Enter the Lab</span>
+ 
+
+    
+
+</div>
+
+<!-- ================================================================ -->
+
+ <!-- Scene 1 -->
+
+<div class="simsubscreen" id="canvas0" style="visibility: hidden; background-image: url(images/bgimag.png); background-position: bottom;" >
+
+
+<audio id="intro1">
+        <source src="audio/quadcopter.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro2">
+        <source src="audio/frame.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro3">
+        <source src="audio/rotors.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro4">
+        <source src="audio/flighttime.mp3" type="audio/mpeg">
+</audio> 
+
+<audio id="intro5">
+        <source src="audio/altitude.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro6">
+        <source src="audio/payload.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="intro7">
+        <source src="audio/landing.mp3" type="audio/mpeg">
+</audio>
+ 
+
+
+<div id="abttext" style="width: 1055px; height: 100px; position: absolute; top: 455px; left: 30px; background-color: #FFF; border-radius: 15px; opacity: 0.8; font-size: 18px; font-weight: bold; padding: 10px; text-align: justify; color: #000; display: none;" >
+  <b style=" font-family: 'Acme', sans-serif;font-size: 20px; ">Quadcopter</b> is an unmanned aerial vehicle (UAV) or drone with four rotors, each with a motor and propeller. A quadcopter can be manually controlled or can be autonomous. It is also called quadrotor helicopter or quadrotor. It belongs to a more general class of aerial vehicles called multicopter or multirotor. Quadcopters provide stable flight performance, making them ideal for surveillance and aerial photography. 
+  
+</div>
+
+
+<img src="images/dronefirstpage.png" id="drnfirt" style=
+"position: absolute;
+    left: 1223px;
+    top: 32px;
+    height: 185px;
+"draggable="false"/>
+
+<span id="quadname" style="position: absolute; font-family: 'Acme', sans-serif; top: 60px; left: 695px; font-size: 50px; color: white; "></span>
+
+    <div style="position: absolute; font-family: 'Acme', sans-serif; left: 600px;
+    top: 155px;
+    font-size: 24px; color: black; font-weight: bolder; ">
+      
+      <p id="quadfeat1"></p> 
+      <p id="quadfeat2"></p> 
+      <p id="quadfeat3"></p>
+</div>
+      <div style="position: absolute; font-family: 'Acme', sans-serif; left: 880px;
+    top: 155px;
+    font-size: 24px; color: black; font-weight: bolder; "> 
+      <p id="quadfeat4"></p> 
+      <p id="quadfeat5"></p>     
+      <p id="quadfeat6"></p> 
+     
+    </div>
+
+
+<!--Blinking arrowcubox  -->
+
+
+<input type="button" id="arrowintro1" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext3()"/>
+
+</div>
+
+<!-- ================================================================ -->
+
+ <!-- Scene 2 -->
+
+<div class="simsubscreen" id="canvas2" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_precautions">
+        <source src="audios/precautions.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre1">
+        <source src="audios/pre1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre2">
+        <source src="audios/pre2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre3">
+        <source src="audios/pre3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre4">
+        <source src="audios/pre4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre5">
+        <source src="audios/pre5.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre6">
+        <source src="audios/pre6.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre7">
+        <source src="audios/pre7.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre8">
+        <source src="audios/pre8.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre9">
+        <source src="audios/pre9.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="pre10">
+        <source src="audios/pre10.mp3" type="audio/mpeg">
+</audio>
+ 
+
+<b style=" 
+    font-size: 33px;
+    position: absolute;
+    left: 520px; font-weight: bold; color:#FFF;
+    top: 25px; ">Precautions</b>
+
+<p id="prelist1" style="position: absolute; top: 70px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    3. Determine the potential hazards before beginning any work.
+</p>
+<p id="prelist2" style="position: absolute; top: 120px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    2. Know locations of laboratory safety showers, eyewashstations, and fire extinguishers.
+</p>
+<p id="prelist3" style="position: absolute; top: 170px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    1. No cell phone or ear phone usage in the laboratories.
+</p>
+<p id="prelist4" style="position: absolute; top: 220px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    4. Avoid wearing jewellery in the lab as this can pose multiple safety hazards.
+</p>
+<p id="prelist5" style="position: absolute; top: 270px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    5. Long hair and loose clothing must be pulled back and secured.
+</p>
+<p id="prelist6" style="position: absolute; top: 320px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    6. Avoid contact with energized electrical circuits.
+</p>
+<p id="prelist7" style="position: absolute; top: 370px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    7. Do not touch anything if your hands are wet. The "one-hand" approach is safest.
+</p>
+<p id="prelist8" style="position: absolute; top: 420px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    8. Do not make circuit changes or perform any wiring when power is on.
+</p>
+<p id="prelist9" style="position: absolute; top: 470px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    9. All equipment should be regularly inspected for wear or deterioration.
+</p>
+<p id="prelist10" style="position: absolute; top: 520px; left: 50px; color: white; font-size: 25px; font-weight: bold; visibility: hidden ;">
+    10. Know emergency exit routes.
+</p>
+<img id="blkimg" src="images/transboxblk.png" style="position: absolute;
+    left: -20px;
+    top: -0px;
+    height: 650px;
+    width: 1230px; display: none;">
+
+<p id="highlighttxt1" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  3. Determine the potential hazards before beginning any work.
+</p>
+<p id="highlighttxt2" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  2. Know locations of laboratory safety showers, eyewashstations, and fire extinguishers.
+</p>
+<p id="highlighttxt3" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  1. No cell phone or ear phone usage in the laboratories.
+</p>
+<p id="highlighttxt4" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  4. Avoid wearing jewellery in the lab as this can pose multiple safety hazards.
+</p>
+<p id="highlighttxt5" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+  5. Long hair and loose clothing must be pulled back and secured.
+</p>
+<p id="highlighttxt6" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   6. Avoid contact with energized electrical circuits.
+</p>
+<p id="highlighttxt7" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   7. Do not touch anything if your hands are wet. The "one-hand" approach is safest.
+</p>
+<p id="highlighttxt8" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   8. Do not make circuit changes or perform any wiring when power is on.
+</p>
+<p id="highlighttxt9" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   9. All equipment should be regularly inspected for wear or deterioration.
+</p>
+<p id="highlighttxt10" style="position: absolute; top: 280px; left: 50px; color: white; font-size: 35px; font-weight: bold;  display: none;"> 
+   10. Know emergency exit routes.
+</p>
+
+
+
+<!--Blinking arrowcubox  -->
+
+
+<input type="button" id="nextButton2" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext3()"/>
+
+<input type="button" id="nextButton2_skp" style="position:absolute; left: 1124px;
+    top: 30px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Skip&nbsp;" onclick="navNext3_skp()"/>
+
+
+</div>
+
+
+
+<!-- =============================CANVAS2================================== -->
+
+
+<!-- =============================CANVAS3================================== -->
+
+
+<div class="simsubscreen" id="canvas3" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_intro_previous">
+        <source src="audios/intro_previous.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_1">
+        <source src="audios/stp3_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_2">
+        <source src="audios/stp3_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_3">
+        <source src="audios/stp3_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_4">
+        <source src="audios/stp3_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_5">
+        <source src="audios/stp3_5.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_6">
+        <source src="audios/stp3_6.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_7">
+        <source src="audios/stp3_7.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp3_8">
+        <source src="audios/stp3_8.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_intro_naza">
+        <source src="audios/intro_naza.mp3" type="audio/mpeg">
+</audio>
+
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/wire4arm_widtie.png" id="wire4arm_widtie" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+"draggable="false"/>
+
+<img src="images/wire4arm_widtieflip.png" id="wire4arm_widtieflip" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ visibility: hidden;
+"draggable="false"/>
+
+<!-- <img src="images/wire4arm_widtieflip.png" id="wire4arm_widtieflip" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ visibility: hidden;
+"draggable="false"/> -->
+
+<img src="images/platewithoutPMU.png" id="platewithoutPMU" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ display:none;
+"draggable="false"/>
+
+<img src="images/pmuwithwire.png" id="pmuwithwire" style=
+"position: absolute;
+ left: 284px;
+ top: 55px;
+ height: 227px;
+ transform-origin: bottom;
+ display: none;
+"draggable="false"/>
+
+
+<img src="images/wire4arm_escnazawire.png" id="wire4arm_escnazawire" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ display: none;
+"draggable="false"/>
+
+<img src="images/wire4arm_pmufix.png" id="wire4arm_pmufix" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ display: none;
+"draggable="false"/>
+
+<div id="tgt_tie" style=" position: absolute; top: 105px; left: 405px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 50px; left: 5px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/tie.png" id="tie" style=
+"position: absolute;
+ left: 955px;
+ top: 500px;
+ height: 16px;
+"draggable="false" onmouseover="tie_hd()" />
+
+<img src="images/tie.png" id="tie2" style=
+"position: absolute;
+ left: 955px;
+ top: 500px;
+ height: 16px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp3_8hd()" />
+
+<img src="images/tie_tied.png" id="tie_tied" style=
+"position: absolute;
+ left: 445px;
+ top: 145px;
+ height: 58px;
+ visibility: hidden;
+"draggable="false" />
+
+<div id="tgt_tape1" style=" position: absolute; top: 228px; left: 278px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 53px; left: 7px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/tape.png" id="tape1" style=
+"position: absolute;
+ left: 990px;
+ top: 70px;
+ height: 45px;
+"draggable="false" onmouseover="tape1_hd()" />
+
+<img src="images/tape.png" id="tape2" style=
+"position: absolute;
+ left: 990px;
+ top: 70px;
+ height: 45px;
+ visibility: hidden;
+"draggable="false" ondragstart="step3_6hd()" />
+
+<img src="images/naza.png" id="naza" style=
+"position: absolute;
+ left: 970px;
+ top: 230px;
+ height: 135px;
+"draggable="false" onmouseover="naza_hd()" />
+
+<img src="images/transbox.png" id="tb_tie" style= "position: absolute;  visibility:; left: 913px; top: 475px; height: 65px; width: 240px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_tape1" style= "position: absolute;  visibility:; left: 964px; top: 45px; height: 95px; width: 99px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_naza" style= "position: absolute;  visibility:; left: 890px; top: 165px; height: 255px; width: 259px;
+    border: 0px solid red;" />
+
+<div id="tgt_naza" style=" position: absolute; top: 220px; left: 255px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 70px; left: 25px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/naza.png" id="naza2" style=
+"position: absolute;
+ left: 970px;
+ top: 230px;
+ height: 135px;
+ visibility: hidden;
+"draggable="false"; ondragstart="step3_2hd()" />
+
+<div id="intro_previous" class="introduction" style="position: absolute; left: 580px; top: 145px; width: 530px; height: 290px; overflow: hidden;     text-align: justify; display:none;">
+
+    <span style="position: absolute; left: 52px; top: 40px; font-size: 23px; 
+    width: 430px;"> In Experiment 1: Assembling of Drone's electrical components we have already assembled 4 Motors, 4 ESCs, 1 Deans plug, 1 PMU, 4 Arms & Center plate. Now we have to assemble the components which are embedded with softwares for smooth flying of Drones. </span>
+
+    <input type="button" id="okbtn_previous" style="position:absolute; left: 380px; top: 235px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: ;" value="&nbsp;OK &nbsp;" onclick="ok_previous()"/>
+
+    <!-- <input type="button" id="skpbtn_sold" style="position:absolute; left: 290px; top: 265px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_sold()"/>
+
+     -->
+
+    </div>
+
+<div id="step3_1" class="step" style=" position: absolute; left: 510px;
+    top: 340px; height: 70px; width: 215px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Click on center plate to flip the plate.</span>
+
+  </div>
+
+  
+  <img src="images/arowdwn.png" id="arowdwn3_1" style= "position: absolute;  visibility: hidden; left: 475px; top: 265px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/transbox.png" id="tb_wire4arm" style= "position: absolute;  visibility:hidden; left: 209px; top: 188px; height: 210px; width: 259px;
+    border: 0px solid red; " onclick="wire4armflip()" />
+
+    <div id="intro_naza"  class="introduction" style="position: absolute;     left: 300px; top: 173px;  width: 640px; height: 288px; overflow: hidden; display:none;">
+
+    <span style="position: absolute; left: 150px; top: 25px; font-size: 34px;"><u>NAZA Flight Controller</u></span> 
+
+    <span style="position: absolute; left: 200px; top: 100px; font-size: 23px; 
+    width: 430px;"> The Naza-M V2 is a powerful flight controller for enthusiast, commercial and industrial flyers. It is easy to install, simple to configure and above all, extremely stable. </span>
+
+    <img src="images/naza.png" style= "position: absolute; left: 40px;
+    top: 95px; height: 155px;"draggable="false"/>
+
+    <input type="button" id="skpbtn_naza" style="position:absolute; left: 450px;
+    top: 235px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_naza()"/>
+
+    <input type="button" id="okbtn_naza" style="position:absolute; left: 450px;
+    top: 235px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_naza()"/>
+
+    </div>
+
+  <div id="step3_2" class="step" style=" position: absolute; left: 890px;
+    top: 80px; height: 85px; width: 250px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag NAZA flight controller and put it on the tape to fix it with the plate.</span>
+
+  </div>
+  
+<img src="images/zoomnaza.png" id="zoomnaza"   style=
+"position: absolute;
+ height: 520px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+ top: 44px;
+ left: 192px;
+"draggable="false" />
+
+<img src="images/zoompmu.png" id="zoompmu"   style=
+"position: absolute;
+ height: 359px;
+ border: 5px solid white;
+ border-radius: 307px;
+ top: 3px;
+ left: 256px;
+ display:none;
+ overflow: hidden;
+"draggable="false" />
+
+<div id="tgt_pmu2" style=" position: absolute; top: 141px; left: 451px; border: 5px dashed black; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 53px; left: 7px; font-style: italic;
+    font-size: 25px; color: black; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/pmu22.png" id="pmu2"   style=
+"position: absolute;
+ display: none;
+ height: 90px;
+ top: 66px;
+ left: 312px;
+"draggable="false" onmouseover="pmu2_hd()" />
+
+<img src="images/pmu22.png" id="pmu3"   style=
+"position: absolute;
+ visibility: hidden;
+ height: 90px;
+ top: 66px;
+ left: 312px;
+"draggable="false" ondragstart="stp3_7()" />
+
+<img src="images/pmu2.png" id="pmu4"   style=
+"position: absolute;
+ visibility: hidden;
+ height: 90px;
+ top: 140px;
+ left: 491px;
+"draggable="false" />
+
+<img src="images/pmupin3.png" id="pmupin3"   style=
+"position: absolute;
+ height: 90px;
+ visibility: hidden;
+ top: 111px;
+ left: 416px;
+"draggable="false" />
+
+<img src="images/expport.png" id="expport"   style=
+"position: absolute;
+ height: 300px;
+ border: 5px solid white;
+ display:none;
+ top: 44px;
+ left: 637px;
+"draggable="false" />
+
+<img src="images/motorport.png" id="motorport"   style=
+"position: absolute;
+ height: 300px;
+ border: 5px solid white;
+ display:none;
+ top: 268px;
+ left: 8px;
+"draggable="false" />
+
+<img src="images/oranwire1_can3.png" id="oranwire1_can3" style=
+"   position: absolute;
+    left: 342px;
+    top: 64px;
+    height: 52px;
+  
+    visibility:hidden;" draggable="false"/>
+
+<!-- <img src="images/orangewire.png" id="oranwire11_can3" style=
+"   position: absolute;
+    left: 400px;
+    top: 54px;
+    height: 10px;
+    width: 10px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/oranwire111_can3.png" id="oranwire111_can3" style=
+"   position: absolute;
+    left: 339px;
+    top: 65px;
+    height: 120px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- ================================WIRE 1============================ -->
+
+
+<svg id="svg_can3" style="visibility:hidden;">
+ 
+  <path class="path_can3" id="path_can3" /> 
+
+<img src="images/pmupin2.png" class="handle_can3" id="handle1_can3" style=
+"   position: absolute;
+    left: -3px;
+    top: -4px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/femalesoct.png" class="handle_can3" id="handle11_can3" style=
+"   position: absolute;
+    left: -51px;
+    top: -17px;
+    height: 55px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle1_div_can3" style=" position: absolute; height: 0px; width: 0px; left: 375px; top: 140px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 1======================== -->
+
+<img src="images/blackwire1_can3.png" id="blackwire1_can3" style=
+"   position: absolute;
+    left: 470px;
+    top: 47px;
+    height: 59px;
+    
+    visibility:hidden;" draggable="false"/>
+
+<!-- <img src="images/blackwire.png" id="blackwire11_can3" style=
+"   position: absolute;
+    left: 424px;
+    top: 51px;
+    height: 12px;
+    width: 10px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/blackwire111_can3.png" id="blackwire111_can3" style=
+"   position: absolute;
+    left: 426px;
+    top: 45px;
+    height: 83px;
+    
+    visibility:hidden;" draggable="false"/>
+
+<!-- ================================WIRE 2============================ -->
+
+
+<svg id="svg2_can3" style="visibility:hidden;">
+ 
+  <path class="path2_can3" id="path2_can3" /> 
+
+<img src="images/pmupin.png" class="handle2_can3" id="handle2_can3" style=
+"   position: absolute;
+    left: -14px;
+    top: -12px;
+    height: 65px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/femalesoct.png" class="handle2_can3" id="handle22_can3" style=
+"   position: absolute;
+    left: -51px;
+    top: -17px;
+    height: 55px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle2_div_can3" style=" position: absolute; height: 0px; width: 0px;     left: 395px; top: 105px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 2======================== -->
+<img src="images/oranwire3_can3.png" id="oranwire3_can3" style=
+"   position: absolute;
+    left: 536px;
+    top: 485px;
+    height: 56px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- <img src="images/orangewire.png" id="oranwire33_can3" style=
+"   position: absolute;
+    left: 514px;
+    top: 551px;
+    height: 10px;
+    width: 8px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/oranwire333_can3.png" id="oranwire333_can3" style=
+"   position: absolute;
+    left: 510px;
+    top: 445px;
+    height: 97px;
+    visibility:hidden;" draggable="false"/>
+
+    <!-- ================================WIRE 3============================ -->
+
+
+<svg id="svg3_can3" style="visibility:hidden;">
+ 
+  <path class="path3_can3" id="path3_can3" /> 
+
+<img src="images/escpin.png" class="handle3_can3" id="handle3_can3" style=
+"   position: absolute;
+    left: -11px;
+    top: -10px;
+    height: 65px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/escpin.png" class="handle3_can3" id="handle33_can3" style=
+"   position: absolute;
+    left: -8px;
+    top: -29px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle3_div_can3" style=" position: absolute; height: 0px; width: 0px; left: 485px; top: 395px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 3======================== -->
+
+<img src="images/oranwire4_can3.png" id="oranwire4_can3" style=
+"   position: absolute;
+    left: 514px;
+    top: 507px;
+    height: 52px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- <img src="images/orangewire.png" id="oranwire44_can3" style=
+"   position: absolute;
+    left: 494px;
+    top: 552px;
+    height: 13px;
+    width: 8px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/oranwire444_can3.png" id="oranwire444_can3" style=
+"   position: absolute;
+    left: 494px;
+    top: 445px;
+    height: 113px;
+    visibility:hidden;" draggable="false"/>
+
+    <!-- ================================WIRE 4============================ -->
+
+
+<svg id="svg4_can3" style="visibility:hidden;">
+ 
+  <path class="path4_can3" id="path4_can3" /> 
+
+<img src="images/escpin.png" class="handle4_can3" id="handle4_can3" style=
+"   position: absolute;
+    left: -11px;
+    top: -10px;
+    height: 65px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/escpin.png" class="handle4_can3" id="handle44_can3" style=
+"   position: absolute;
+    left: -7px;
+    top: -29px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle4_div_can3" style=" position: absolute; height: 0px; width: 0px; left: 470px; top: 380px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 4======================== -->
+
+<img src="images/oranwire5_can3.png" id="oranwire5_can3" style=
+"   position: absolute;
+    left: 492px;
+    top: 499px;
+    height: 64px;
+    visibility:hidden;" draggable="false"/>
+<!-- 
+<img src="images/orangewire.png" id="oranwire55_can3" style=
+"   position: absolute;
+    left: 478px;
+    top: 555px;
+    height: 13px;
+    width: 8px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/oranwire555_can3.png" id="oranwire555_can3" style=
+"   position: absolute;
+    left: 479px;
+    top: 446px;
+    height: 116px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- ================================WIRE 5============================ -->
+
+
+<svg id="svg5_can3" style="visibility:hidden;">
+ 
+  <path class="path5_can3" id="path5_can3" /> 
+
+<img src="images/escpin.png" class="handle5_can3" id="handle5_can3" style=
+"   position: absolute;
+    left: -11px;
+    top: -10px;
+    height: 65px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/escpin.png" class="handle5_can3" id="handle55_can3" style=
+"   position: absolute;
+    left: -8px;
+    top: -30px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle5_div_can3" style=" position: absolute; height: 0px; width: 0px; left: 450px; top: 375px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 5======================== -->
+
+<img src="images/oranwire6_can3.png" id="oranwire6_can3" style=
+"   position: absolute;
+    left: 468px;
+    top: 517px;
+    height: 51px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- <img src="images/orangewire.png" id="oranwire66_can3" style=
+"   position: absolute;
+    left: 462px;
+    top: 555px;
+    height: 13px;
+    width: 8px;
+    visibility:hidden;" draggable="false"/> -->
+
+<img src="images/oranwire666_can3.png" id="oranwire666_can3" style=
+"   position: absolute;
+    left: 460px;
+    top: 446px;
+    height: 123px;
+    visibility:hidden;" draggable="false"/>
+
+<!-- ================================WIRE 6============================ -->
+
+
+<svg id="svg6_can3" style="visibility:hidden;">
+ 
+  <path class="path6_can3" id="path6_can3" /> 
+
+<img src="images/escpin.png" class="handle6_can3" id="handle6_can3" style=
+"   position: absolute;
+    left: -11px;
+    top: -10px;
+    height: 65px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/escpin.png" class="handle6_can3" id="handle66_can3" style=
+"   position: absolute;
+    left: -6px;
+    top: -28px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle6_div_can3" style=" position: absolute; height: 0px; width: 0px; left: 435px; top: 380px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+    <!-- ================================WIRE 6======================== -->
+
+
+
+<div id="step3_3" class="step" style=" position: absolute; left: 5px;
+    top: 70px; height: 85px; width: 250px; display:none; " >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag PMU wire and plug it in the X3 port of NAZA flight controller.</span>
+
+</div>
+
+<div id="step3_4" class="step" style=" position: absolute; left: 545px;
+    top: 40px; height: 85px; width: 240px; display:none; " >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag PMU EXP pin and plug it in the EXP port of NAZA flight controller.</span>
+
+</div>
+
+<div id="step3_5" class="step" style=" position: absolute; left: 655px;
+    top: 425px; height: 109px; width: 258px; display:none;" >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag ESCs wires one by one and plug them in the M1, M2, M3 & M4 port of NAZA flight controller.</span>
+
+</div>
+
+<div id="step3_6" class="step" style=" position: absolute; left: 680px;
+    top: 50px; height: 70px; width: 240px; display:none;" >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag double sided tape and put it on the center plate.</span>
+
+</div>
+
+<div id="step3_7" class="step" style=" position: absolute;     left: 105px;
+    top: 50px;
+    height: 70px;
+    width: 178px; display:none;" >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on PMU to fix it on the arm. </span>
+
+</div>
+
+<div id="step3_8" class="step" style=" position: absolute; left: 910px;
+    top: 340px; height: 88px; width: 215px; display:none;" >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag Cable tie and put it on the PMU to tie PMU with the arm.</span>
+
+</div>
+
+<img src="images/arowdwn.png" id="arowdwn_can3" style= "position: absolute;  visibility:hidden; left: 280px; top: 80px; height: 85px; transform: rotate(-90deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn2_can3" style= "position: absolute;  visibility:hidden; left: 310px; top: 165px; height: 85px; transform: rotate(-90deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn3_can3" style= "position: absolute;  visibility:hidden; left: 490px; top: 85px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn4_can3" style= "position: absolute;  visibility:hidden; left: 460px; top: 145px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn5_can3" style= "position: absolute;  visibility:hidden; left: 553px; top: 438px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn6_can3" style= "position: absolute;  visibility:hidden; left: 528px; top: 365px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn7_can3" style= "position: absolute;  visibility:hidden; left: 532px; top: 459px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn8_can3" style= "position: absolute;  visibility:hidden; left: 511px; top: 364px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn9_can3" style= "position: absolute;  visibility:hidden; left: 511px; top: 460px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn10_can3" style= "position: absolute;  visibility:hidden; left: 494px; top: 364px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn11_can3" style= "position: absolute;  visibility:hidden; left: 485px; top: 466px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn12_can3" style= "position: absolute;  visibility:hidden; left: 478px; top: 364px; height: 85px; transform: rotate(-270deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn13_can3" style= "position: absolute;  visibility:hidden; left: 375px; top: 80px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_pmuwire1" style= "position: absolute;  visibility:hidden; left: 357px; top: 91px; height: 57px; width: 40px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_pmuwire2" style= "position: absolute;  visibility:hidden; left: 455px; top: 89px; height: 75px; width: 40px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_escwire1" style= "position: absolute;  visibility:hidden; left: 531px; top: 453px; height: 50px; width: 31px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_escwire2" style= "position: absolute;  visibility:hidden; left: 510px; top: 474px; height: 50px; width: 22px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_escwire3" style= "position: absolute;  visibility:hidden; left: 485px; top: 473px; height: 50px; width: 22px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_escwire4" style= "position: absolute;  visibility:hidden; left: 461px; top: 480px; height: 50px; width: 22px;
+    border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_pmu" style= "position: absolute;  visibility:hidden;     left: 283px;
+    top: 54px;
+    height: 196px;
+    width: 93px;
+    border: 0px solid green;" onclick="pmu_fix()" />
+
+    <input type="button" id="nextButton3" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext4()"/>
+
+</div> <!-- CAN3============= -->
+
+
+<!-- =============================CANVAS3================================== -->
+
+
+<!-- ==============================CANVAS4=========================== -->
+
+ <!-- Scene 4 -->
+
+
+
+<div class="simsubscreen" id="canvas4" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="note_esc" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas4-------------------------------->
+
+<div id="question1" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_01" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q1.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">PMU EXP wire connects with _______
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q1" id="optionA" value="Incorrect Answer">&nbsp;EXP Port<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q1" id="optionB" value="Correct Answer">&nbsp;LED Port<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q1" id="optionC" value="Incorrect Answer">&nbsp;M1 Port<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q1" id="optionD" value="Incorrect Answer">&nbsp;F2 Port<br></span>
+
+    <div id="ans_can4" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan4" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c4()"/>
+
+    <input type="button" id="nextButton4" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext5()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas4-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS4=========================== -->
+
+<!-- ==============================CANVAS5=========================== -->
+
+<div class="simsubscreen" id="canvas5" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_stp5_1">
+        <source src="audios/stp5_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_2">
+        <source src="audios/stp5_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_3">
+        <source src="audios/stp5_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_4">
+        <source src="audios/stp5_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_5">
+        <source src="audios/stp5_5.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_6">
+        <source src="audios/stp5_6.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_7">
+        <source src="audios/stp5_7.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_8">
+        <source src="audios/stp5_8.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_9">
+        <source src="audios/stp5_9.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp5_10">
+        <source src="audios/stp5_10.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_intro_reciever">
+        <source src="audios/intro_reciever.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_intro_gps">
+        <source src="audios/intro_gps.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/wire4arm_pmufix.png" id="wire4arm_pmufixcan5" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+"draggable="false"/>
+
+<img src="images/withrecieverwire.png" id="withrecieverwire" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ display: none;
+"draggable="false"/>
+
+<img src="images/tie_tied.png" id="" style=
+"position: absolute;
+ left: 447px;
+ top: 151px;
+ height: 58px;
+"draggable="false" />
+
+<img src="images/gps.png" id="gps" style=
+"position: absolute;
+ left: 995px;
+ top: 64px;
+ height: 168px;
+"draggable="false" onmouseover="gps_hd()" />
+
+<img src="images/gps.png" id="gps2" style=
+"position: absolute;
+ left: 995px;
+ top: 64px;
+ height: 168px;
+ visibility: hidden;
+"draggable="false" ondragstart="step5_9hd()" />
+
+<img src="images/tape.png" id="tape4" style=
+"position: absolute;
+ left: 893px;
+ top: 150px;
+ height: 45px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp5_1hd()" />
+
+
+<div id="tgt_reciver" style=" position: absolute; top: 240px; left: 115px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 53px; left: 7px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/reciver.png" id="reciver" style=
+"position: absolute;
+ left: 920px;
+ top: 255px;
+ height: 93px;
+"draggable="false" onmouseover="reciver_hd()" />
+
+<img src="images/reciver.png" id="reciver2" style=
+"position: absolute;
+ left: 920px;
+ top: 255px;
+ height: 93px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp5_2hd()" />
+
+<div id="tgt_tape3" style=" position: absolute; top: 240px; left: 183px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 53px; left: 7px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/tape.png" id="tape3" style=
+"position: absolute;
+ left: 893px;
+    top: 150px;
+    height: 45px;
+"draggable="false" onmouseover="tape3_hd()" />
+
+
+
+<div id="tgt_recieverwires" style=" position: absolute; top: 370px; left: 243px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 50px; left: 35px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/recieverwires.png" id="recieverwires" style=
+"position: absolute;
+ left: 930px;
+ top: 390px;
+ height: 140px;
+"draggable="false" onmouseover="recieverwires_hd()" />
+
+<img src="images/recieverwires.png" id="recieverwires2" style=
+"position: absolute;
+ left: 930px;
+ top: 390px;
+ height: 140px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp5_3hd()" />
+
+<div id="tgt_gps" style=" position: absolute; top: 210px; left: 427px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 65px; left: 35px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/zoomgps.png" id="zoomgps" style=
+"position: absolute;
+ height: 356px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+ top: 50px;
+ left: 329px;
+"draggable="false" />
+
+<img src="images/zoomreciever.png" id="zoomreciever" style=
+"position: absolute;
+ height: 520px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+ top: 44px;
+ left: 192px;
+"draggable="false" />
+
+<img src="images/gpswire1.png" id="gpswire1" style=
+"position: absolute;
+ left: 415px;
+ top: 273px;
+ height: 105px;
+ transform: rotate(45deg);
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/gpswire2.png" id="gpswire2" style=
+"position: absolute;
+    left: 404px;
+    top: 205px;
+    height: 176px;
+  visibility: hidden;
+"draggable="false" />
+
+<img src="images/pmupin3.png" id="pmupingps" style=
+"position: absolute;
+    left: 540px;
+    top: 127px;
+    height: 105px;
+    transform: rotate(216deg);
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red1.png" id="red1" style=
+"position: absolute;
+ left: 438px;
+ top: 306px;
+ height: 29px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red2.png" id="red2" style=
+"position: absolute;
+ left: 369px;
+ top: 282px;
+ height: 65px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/ch1wire.png" id="ch1wire" style=
+"position: absolute;
+ left: 371px;
+ top: 309px;
+ height: 58px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red1.png" id="red3" style=
+"position: absolute;
+ left: 455px;
+ top: 262px;
+ height: 29px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red2.png" id="red4" style=
+"position: absolute;
+ left: 367px;
+ top: 257px;
+ height: 65px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/ch2wire.png" id="ch2wire" style=
+"position: absolute;
+ left: 347px;
+ top: 293px;
+ height: 79px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red1.png" id="red5" style=
+"position: absolute;
+ left: 424px;
+ top: 231px;
+ height: 29px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red3.png" id="red6" style=
+"position: absolute;
+ left: 368px;
+ top: 234px;
+ height: 56px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/ch3wire.png" id="ch3wire" style=
+"position: absolute;
+ left: 371px;
+ top: 276px;
+ height: 93px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red1.png" id="red7" style=
+"position: absolute;
+ left: 488px;
+ top: 207px;
+ height: 29px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red4.png" id="red8" style=
+"position: absolute;
+ left: 368px;
+ top: 206px;
+ height: 65px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/ch4wire.png" id="ch4wire" style=
+"position: absolute;
+ left: 356px;
+ top: 255px;
+ height: 123px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red1.png" id="red9" style=
+"position: absolute;
+ left: 463px;
+ top: 182px;
+ height: 29px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/red4.png" id="red10" style=
+"position: absolute;
+ left: 368px;
+ top: 182px;
+ height: 60px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/ch5wire.png" id="ch5wire" style=
+"position: absolute;
+ left: 372px;
+ top: 232px;
+ height: 137px;
+ visibility:hidden;
+"draggable="false" />
+
+
+<!-- =======================CANVAS5======WIRE 1============================ -->
+
+
+<svg id="svg_can5" style="visibility:hidden;">
+ 
+  <path class="path_can5" id="path_can5" /> 
+
+  <div class="handle_can5" id="handle1_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle_can5" id="handle11_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 10px; width: 20px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+
+<!-- =======================CANVAS5======WIRE 1============================ -->
+
+
+<svg id="svg1_can5" style="visibility:hidden;">
+ 
+  <path class="path1_can5" id="path1_can5" /> 
+
+  <div class="handle1_can5" id="handle1_1_can5" style="position: absolute;left: -3px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle1_can5" id="handle11_11_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle1_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 325px; top: 305px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<div id="handle11_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 590px; top: 340px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+
+<img src="images/transbox.png" id="tb_handle1_can5" style= "position: absolute; left: 430px; top: 302px; height: 24px; width: 38px; border: 0px solid green; visibility: hidden;" />
+
+<img src="images/transbox.png" id="tb_handle11_can5" style= "position: absolute;  left: 562px; top: 314px; height: 40px; width: 38px; visibility: hidden; border: 0px solid yellow;" />
+
+
+<!-- =======================CANVAS5======WIRE 1============================ -->
+
+
+
+<!-- =======================CANVAS5======WIRE 2============================ -->
+
+
+<svg id="svg2_can5" style="visibility:hidden;">
+ 
+  <path class="path2_can5" id="path2_can5" /> 
+
+  <div class="handle2_can5" id="handle2_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle2_can5" id="handle22_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 10px; width: 20px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+
+<!-- =======================CANVAS5======WIRE 2============================ -->
+
+
+<svg id="svg22_can5" style="visibility:hidden;">
+ 
+  <path class="path22_can5" id="path22_can5" /> 
+
+  <div class="handle22_can5" id="handle2_2_can5" style="position: absolute;left: -3px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle22_can5" id="handle22_22_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle2_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 325px; top: 270px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<div id="handle22_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 570px; top: 325px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+
+<img src="images/transbox.png" id="tb_handle2_can5" style= "position: absolute;     left: 435px;
+    top: 258px; height: 24px; width: 38px; border: 0px solid green; visibility: hidden;" />
+
+<img src="images/transbox.png" id="tb_handle22_can5" style= "position: absolute;      left: 566px;
+    top: 268px; height: 40px; width: 38px; visibility: hidden; border: 0px solid yellow;" />
+
+
+<!-- =======================CANVAS5======WIRE 2============================ -->
+
+
+
+<!-- =======================CANVAS5======WIRE 3============================ -->
+
+
+<svg id="svg3_can5" style="visibility:hidden;">
+ 
+  <path class="path3_can5" id="path3_can5" /> 
+
+  <div class="handle3_can5" id="handle3_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle3_can5" id="handle33_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 10px; width: 20px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+
+<!-- =======================CANVAS5======WIRE 3============================ -->
+
+
+<svg id="svg33_can5" style="visibility:hidden;">
+ 
+  <path class="path33_can5" id="path33_can5" /> 
+
+  <div class="handle33_can5" id="handle3_3_can5" style="position: absolute;left: -3px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle33_can5" id="handle33_33_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle3_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 325px; top: 250px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<div id="handle33_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 550px; top: 325px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+
+<img src="images/transbox.png" id="tb_handle3_can5" style= "position: absolute; left: 414px; top: 226px; height: 24px; width: 38px; border: 0px solid green; visibility: hidden;" />
+
+<img src="images/transbox.png" id="tb_handle33_can5" style= "position: absolute;  left: 546px; top: 236px; height: 40px; width: 38px; visibility: hidden; border: 0px solid yellow;" />
+
+
+<!-- =======================CANVAS5======WIRE 3============================ -->
+
+
+<!-- =======================CANVAS5======WIRE 4============================ -->
+
+
+<svg id="svg4_can5" style="visibility:hidden;">
+ 
+  <path class="path4_can5" id="path4_can5" /> 
+
+  <div class="handle4_can5" id="handle4_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle4_can5" id="handle44_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 10px; width: 20px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+
+<!-- =======================CANVAS5======WIRE 4============================ -->
+
+
+<svg id="svg44_can5" style="visibility:hidden;">
+ 
+  <path class="path44_can5" id="path44_can5" /> 
+
+  <div class="handle44_can5" id="handle4_4_can5" style="position: absolute;left: -3px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle44_can5" id="handle44_44_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle4_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 325px; top: 230px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<div id="handle44_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 533px; top: 320px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+
+<img src="images/transbox.png" id="tb_handle4_can5" style= "position: absolute; left: 473px;
+    top: 203px; height: 24px; width: 38px; border: 0px solid green; visibility: hidden;" />
+
+<img src="images/transbox.png" id="tb_handle44_can5" style= "position: absolute;  left: 600px; top: 220px; height: 40px; width: 38px; visibility: hidden; border: 0px solid yellow;" />
+
+
+<!-- =======================CANVAS5======WIRE 4============================ -->
+
+<!-- =======================CANVAS5======WIRE 5============================ -->
+
+
+<svg id="svg5_can5" style="visibility:hidden;">
+ 
+  <path class="path5_can5" id="path5_can5" /> 
+
+  <div class="handle5_can5" id="handle5_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle5_can5" id="handle55_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 10px; width: 20px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+
+<!-- =======================CANVAS5======WIRE 5============================ -->
+
+
+<svg id="svg55_can5" style="visibility:hidden;">
+ 
+  <path class="path55_can5" id="path55_can5" /> 
+
+  <div class="handle55_can5" id="handle5_5_can5" style="position: absolute;left: -3px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+  <div class="handle55_can5" id="handle55_55_can5" style="position: absolute;left: 0px; top: -4px; color: black; background-color: black; height: 25px; width: 10px; visibility:hidden;"></div>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle5_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 328px; top: 208px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<div id="handle55_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 513px; top: 323px; visibility: hidden; color: black; border: 0px dashed yellow;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+
+<img src="images/transbox.png" id="tb_handle5_can5" style= "position: absolute; left: 452px; top: 177px; height: 24px; width: 38px; border: 0px solid green; visibility: hidden;" />
+
+<img src="images/transbox.png" id="tb_handle55_can5" style= "position: absolute;  left: 574px; top: 190px; height: 40px; width: 38px; visibility: hidden; border: 0px solid yellow;" />
+
+
+<!-- =======================CANVAS5======WIRE 5============================ -->
+
+
+<!-- ==========================GPS WIRE========================== -->
+
+
+<svg id="svg6_can5" style="visibility:hidden;">
+ 
+  <path class="path6_can5" id="path6_can5" /> 
+
+<img src="images/pmupin2.png" class="handle6_can5" id="handle6_can5" style=
+"   position: absolute;
+    left: -3px;
+    top: -4px;
+    height: 35px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/pmupin4.png" class="handle6_can5" id="handle66_can5" style=
+"   position: absolute;
+    left: -9px;
+    top: -50px;
+    height: 55px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle6_div_can5" style=" position: absolute; height: 0px; width: 0px; left: 505px; top: 135px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<!-- ==========================GPS WIRE========================== -->
+
+<img src="images/transbox.png" id="tb_tape3" style= "position: absolute; left: 837px; top: 117px; height: 100px; width: 148px; border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_reciever" style= "position: absolute; left: 860px; top: 219px; height: 158px; width: 321px; border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_recieverwires" style= "position: absolute; left: 906px; top: 391px; height: 130px; width: 248px; border: 0px solid red;" />
+
+<img src="images/transbox.png" id="tb_gps" style= "position: absolute; left: 961px; top: 39px; height: 216px; width: 231px; border: 0px solid red;" />
+
+<div id="step5_1" class="step" style=" position: absolute; left: 680px;
+    top: 50px; height: 70px; width: 240px; display:none;" >
+
+  <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag double sided tape and put it on the center plate.</span>
+
+</div>
+
+<div id="intro_reciever" class="introduction" style="position: absolute; left: 240px; top: 133px;  width: 640px; height: 345px; overflow: hidden; display:none;">
+
+    <span style="position: absolute; left: 315px; top: 15px; font-size: 34px;"><u>Receiver</u></span> 
+
+    <span style="position: absolute; left: 200px; top: 85px; font-size: 23px; 
+    width: 430px;">Receiver is an electronic device that uses built-in antennas to receive radio signals from the drone controller. But the receiver doesn't just receive signals from the drone controller. It also interprets the signals and converts them into alternating current pulses.</span>
+
+    <img src="images/reciver.png" style= "position: absolute; left: -20px;
+    top: 110px; height: 115px; transform: rotate(90deg);"draggable="false"/>
+
+    <input type="button" id="skpbtn_rec" style="position:absolute;     left: 300px; top: 302px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_rec()"/>
+
+    <input type="button" id="okbtn_rec" style="position:absolute; left: 300px; top: 302px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_rec()"/>
+
+    </div>
+
+
+  <div id="intro_gps" class="introduction" style="position: absolute; left: 240px; top: 35px; width: 670px; height: 328px; overflow: hidden; display:none;">
+
+    <span style="position: absolute; left: 22px; top: 15px; font-size: 34px;"><u>Global Positioning System Module (GPS)</u></span> 
+
+    <span style="position: absolute; left: 200px; top: 85px; font-size: 23px; 
+    width: 430px;">GPS module that allows them to know their location relative to a network of orbiting satellites. Connecting to signals from these satellites allows the drone to perform functions such as position hold, autonomous flight, return to home, and waypoint navigation.</span>
+
+    <img src="images/gps.png" style= "position: absolute; left: 15px;
+    top: 80px;
+    height: 225px;"draggable="false"/>
+
+    <input type="button" id="skpbtn_gps" style="position:absolute; left: 600px;
+    top: 280px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_gps()"/>
+
+    <input type="button" id="okbtn_gps" style="position:absolute; left: 600px;
+    top: 280px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_gps()"/>
+
+    </div>
+
+  <div id="step5_2" class="step" style=" position: absolute; left: 902px;
+    top: 106px; height: 85px; width: 235px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver and put it on the tape to fix it with the plate.</span>
+
+  </div>
+
+   <div id="step5_3" class="step" style=" position: absolute; left: 915px;
+    top: 265px; height: 85px; width: 210px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wires and put it near the center plate.</span>
+
+  </div>
+
+  <div id="step5_4" class="step" style=" position: absolute; left: 488px;
+    top: 156px; height: 115px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wire and plug it in the CH1 port of receiver & A port of NAZA flight controller.</span>
+
+  </div>
+
+  <div id="step5_5" class="step" style=" position: absolute; left: 488px;
+    top: 110px; height: 115px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wire and plug it in the CH2 port of receiver & E port of NAZA flight controller.</span>
+
+  </div>
+
+  <div id="step5_6" class="step" style=" position: absolute; left: 488px;
+    top: 90px; height: 115px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wire and plug it in the CH3 port of receiver & T port of NAZA flight controller.</span>
+
+  </div>
+
+  <div id="step5_7" class="step" style=" position: absolute; left: 521px;
+    top: 67px; height: 115px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wire and plug it in the CH4 port of receiver & R port of NAZA flight controller.</span>
+
+  </div>
+
+  <div id="step5_8" class="step" style=" position: absolute; left: 521px;
+    top: 50px; height: 115px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag receiver wire and plug it in the CH5 port of receiver & U port of NAZA flight controller.</span>
+
+  </div>
+
+  <div id="step5_9" class="step" style=" position: absolute;     left: 700px;
+    top: 110px;
+    height: 71px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag GPS and drop it near the center plate.</span>
+
+  </div>
+
+  <div id="step5_10" class="step" style=" position: absolute;     left: 580px;
+    top: 240px;
+    height: 71px; width: 222px; display:none; " >
+
+  <span style="position: absolute; left: 1px; top: 13px; font-size: 18px; font-weight: bold;">Drag GPS wire and fix it in the GPS port of PMU.</span>
+
+  </div>
+
+  <img src="images/arowdwn.png" id="arowdwn1_can5" style= "position: absolute;  visibility:hidden; left: 420px; top: 211px; height: 85px; "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn2_can5" style= "position: absolute;  visibility:hidden; left: 214px; top: 280px; height: 85px; transform: rotate(-90deg); "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn3_can5" style= "position: absolute;  visibility:hidden;     left: 610px;
+    top: 280px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn4_can5" style= "position: absolute;  visibility:hidden;     left: 577px;
+    top: 430px;
+    height: 85px;
+    transform: rotate(-180deg); "draggable="false"/>
+
+ <img src="images/arowdwn.png" id="arowdwn5_can5" style= "position: absolute;  visibility:hidden;     left: 415px;
+    top: 170px;
+    height: 85px;
+    "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn6_can5" style= "position: absolute;  visibility:hidden;     left: 236px;
+    top: 259px;
+    height: 85px;
+    transform: rotate(-90deg); "draggable="false"/>
+
+ <img src="images/arowdwn.png" id="arowdwn7_can5" style= "position: absolute;  visibility:hidden;     left: 600px;
+    top: 247px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn8_can5" style= "position: absolute;  visibility:hidden;     left: 558px;
+    top: 430px;
+    height: 85px;
+    transform: rotate(-180deg); "draggable="false"/>
+
+ <img src="images/arowdwn.png" id="arowdwn9_can5" style= "position: absolute;  visibility:hidden; left: 395px; top: 135px; height: 85px; "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn10_can5" style= "position: absolute;  visibility:hidden; left: 237px;
+    top: 237px;
+    height: 85px;
+    transform: rotate(-90deg); "draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn11_can5" style= "position: absolute;  visibility:hidden;     left: 570px;
+    top: 210px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn12_can5" style= "position: absolute;  visibility:hidden;     left: 538px;
+    top: 430px;
+    height: 85px;
+    transform: rotate(-180deg); "draggable="false"/>
+
+    <img src="images/arowdwn.png" id="arowdwn13_can5" style= "position: absolute;  visibility:hidden; left: 449px; top: 120px; height: 85px; "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn14_can5" style= "position: absolute;  visibility:hidden; left: 236px;
+    top: 215px; height: 85px; transform: rotate(-90deg); "draggable="false"/>
+
+ <img src="images/arowdwn.png" id="arowdwn15_can5" style= "position: absolute;  visibility:hidden;     left: 635px;
+    top: 195px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn16_can5" style= "position: absolute;  visibility:hidden;     left: 520px;
+    top: 430px;
+    height: 85px;
+    transform: rotate(-180deg); "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn17_can5" style= "position: absolute;  visibility:hidden; left: 428px; top: 93px; height: 85px; "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn18_can5" style= "position: absolute;  visibility:hidden; left: 237px; top: 193px; height: 85px; transform: rotate(-90deg); "draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn19_can5" style= "position: absolute;  visibility:hidden;     left: 614px;
+    top: 160px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn20_can5" style= "position: absolute;  visibility:hidden; left: 502px; top: 424px; height: 85px; transform: rotate(180deg); "draggable="false"/>
+
+    <img src="images/arowdwn.png" id="arowdwn21_can5" style= "position: absolute;  visibility:hidden;        left: 494px;
+    top: 237px;
+    height: 85px;
+    transform: rotate(90deg);"draggable="false"/>
+
+  <img src="images/arowdwn.png" id="arowdwn22_can5" style= "position: absolute;  visibility:hidden;     left: 536px;
+    top: 49px;
+    height: 85px;
+     "draggable="false"/>
+
+  <input type="button" id="nextButton5" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext6()"/>
+
+</div> <!-- CAN5 DIV========= -->
+<!-- ==============================CANVAS5=========================== -->
+
+<!-- ==============================CANVAS6=========================== -->
+
+ <!-- Scene 6 -->
+
+
+
+<div class="simsubscreen" id="canvas6" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can6">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas6-------------------------------->
+
+<div id="question2" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_02" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q2.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">Receiver is used to receive _______
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q2" id="optionA2" value="Incorrect Answer">&nbsp;GPS Signals<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q2" id="optionB2" value="Correct Answer">&nbsp;Direction<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q2" id="optionC2" value="Incorrect Answer">&nbsp;Network<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q2" id="optionD2" value="Incorrect Answer">&nbsp;Radio Signals<br></span>
+
+    <div id="ans_can6" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan6" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can6" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c6()"/>
+
+    <input type="button" id="nextButton6" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext7()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas6-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS6=========================== -->
+
+<!-- ==============================CANVAS7=========================== -->
+
+<div class="simsubscreen" id="canvas7" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_stp7_1">
+        <source src="audios/stp7_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp7_2">
+        <source src="audios/stp7_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp7_3">
+        <source src="audios/stp7_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_introtopplate">
+        <source src="audios/introtopplate.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_notetopplate">
+        <source src="audios/notetopplate.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/withrecieverwire2.png" id="" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+"draggable="false"/>
+
+<img src="images/gps.png" id="" style=
+"position: absolute;
+left: 403px;
+    top: 193px;
+    height: 168px;
+ visibility: ;
+"draggable="false" />
+
+<div id="tgt_topplate" style=" position: absolute; top: 210px; left: 244px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 65px; left: 35px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+
+<img src="images/topplate.png" id="topplate" style=
+"position: absolute;
+ left: 850px;
+ top: 144px;
+ height: 152px;
+"draggable="false" onmouseover="topplate_hd()" />
+
+<img src="images/topplate.png" id="topplate2" style=
+"position: absolute;
+ left: 850px;
+ top: 144px;
+ height: 152px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp7_1hd()" />
+
+<img src="images/zoomtopplate.png" id="zoomtopplate"   style=
+"position: absolute;
+     height: 475px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+top: 65px;
+    left: 125px;
+"draggable="false" />
+
+<img src="images/tray.png" id="tray" style=
+"position: absolute;
+ left: 850px;
+ top: 370px;
+ height: 170px;
+"draggable="false" />
+
+
+<img src="images/nut.png" id="nut6" style=
+"position: absolute;
+      left: 933px;
+    top: 412px;
+    height: 35px;
+"draggable="false"/>
+
+<img src="images/nut.png" id="nut5" style=
+"position: absolute;
+ left: 927px;
+ top: 463px;
+ height: 35px;
+"draggable="false"/>
+
+
+
+<img src="images/nut.png" id="nut7" style=
+"position: absolute;
+ left: 953px;
+ top: 440px;
+ height: 35px;
+"draggable="false"/>
+
+<img src="images/nut.png" id="nut8" style=
+"position: absolute;
+       left: 900px;
+    top: 449px;
+    height: 35px;
+"draggable="false"/>
+
+<div id="tgt_lnkey" style=" position: absolute; top: 185px;
+    left: 206px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 27px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/lnkey.png" id="lnkey" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+"draggable="false" onmouseover="lnkey_hd()" />
+
+<img src="images/lnkey.png" id="lnkey3" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/lnkey.png" id="lnkey2" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+ visibility: hidden;
+"draggable="false" ondragstart="step7_3hd()" />
+
+<img src="images/transbox.png" id="tb_lnkey" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+<div id="tgt_nut4" style=" position: absolute; top: 168px; left: 286px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut4" style=
+"position: absolute;
+     left: 951px;
+    top: 387px;
+    height: 35px;
+"draggable="false" onmouseover="nut4_hd()"/>
+
+<img src="images/nut.png" id="nut44" style=
+"position: absolute;
+     left: 951px;
+    top: 387px;
+    height: 35px;
+    visibility: hidden;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf4" style=
+"position: absolute;
+left: 299px;
+    top: 209px;
+    height: 18px;
+ visibility: hidden;
+"draggable="false"/>
+
+
+<img src="images/transbox.png" id="tb_nut4" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+<div id="tgt_nut3" style=" position: absolute; top: 198px; left: 247px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut3" style=
+"position: absolute;
+     left: 913px;
+    top: 390px;
+    height: 35px;
+"draggable="false" onmouseover="nut3_hd()"/>
+
+<img src="images/nut.png" id="nut33" style=
+"position: absolute;
+     left: 913px;
+    top: 390px;
+    height: 35px;
+    visibility: hidden;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf3" style=
+"position: absolute;
+    left: 268px;
+    top: 241px;
+    height: 18px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_nut3" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+<div id="tgt_nut2" style=" position: absolute; top: 115px; left: 247px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut2" style=
+"position: absolute;
+    left: 894px;
+    top: 417px;
+    height: 35px;
+"draggable="false" onmouseover="nut2_hd()" />
+
+
+
+<img src="images/nut.png" id="nut22" style=
+"position: absolute;
+    left: 894px;
+    top: 417px;
+    height: 35px;
+    visibility: hidden;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf2" style=
+"position: absolute;
+  left: 268px;
+    top: 165px;
+    height: 18px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_nut2" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+<div id="tgt_nut1" style=" position: absolute; top: 175px; left: 197px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut1" style=
+"position: absolute;
+ left: 877px;
+ top: 396px;
+ height: 35px;
+"draggable="false" onmouseover="nut1_hd()" />
+
+<img src="images/nut.png" id="nut11" style=
+"position: absolute;
+ left: 877px;
+ top: 396px;
+ height: 35px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp7_2hd()" />
+
+<img src="images/nutf.png" id="nutf1" style=
+"position: absolute;
+ left: 225px;
+ top: 208px;
+ height: 18px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_nut1" style= "position: absolute;  visibility:; left: 855px;
+  top: 374px;
+  height: 156px;
+  width: 158px;
+  border: 0px solid red;" />
+
+  <!-- <img src="images/nutf.png" id="nutf1s" style=
+"position: absolute;
+    left: 298px;
+    top: 242px;
+    height: 9px;
+ display:none;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf2s" style=
+"position: absolute;
+    left: 313px;
+    top: 263px;
+    height: 9px;
+ display:none;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf3s" style=
+"position: absolute;
+    left: 277px;
+    top: 263px;
+    height: 9px;
+ display:none;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf4s" style=
+"position: absolute;
+    left: 298px;
+    top: 279px;
+    height: 9px;
+ display:none;
+"draggable="false"/> -->
+
+ <img src="images/lnkeyhand.png" id="lnkeyhand" style=
+"position: absolute;
+ left: 180px;
+ top: 202px;
+ height: 225px;
+ transform-origin: top;
+ visibility: hidden;
+"draggable="false"  />
+ 
+  <div id="intro_plate" class="introduction" style="position: absolute;
+  left: 86px;
+  top: 93px;
+  width: 706px;
+  height: 256px; display:none;">
+
+     <span style="position: absolute; left: 375px; top: 18px; font-size: 34px;"><u> Top Plate</u></span> 
+
+    <span style="position: absolute; left: 260px;
+    top: 84px; font-size: 23px;
+    width: 430px;"> This plate is usually needed to cover various components of drone so that damage can be reduced at the time of crash. </span>
+
+    <img src="images/topplate.png" style= "position: absolute; left: 33px;
+    top: 39px;
+    height: 190px; "draggable="false"/>
+
+    
+    <input type="button" id="skpbtn_tplate" style="position:absolute; top: 195px;    left: 455px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_tplate()"/>
+
+    <input type="button" id="okbtn_tplate" style="position:absolute;     top: 195px;    left: 455px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_tplate()"/>
+
+    </div>
+
+    <div id="step7_1" class="step" style=" position: absolute;left: 552px;
+    top: 140px; height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag top plate and put it on the arms.</span>
+
+    </div>
+
+    <div id="step7_2" class="step" style=" position: absolute;    left: 794px;
+    top: 270px;
+    height: 86px;
+    width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag screws one by one and put them on the top plate.</span>
+
+    </div>
+
+    <div id="step7_3" class="step" style=" position: absolute; left: 794px;
+    top: 270px;
+    height: 86px;
+    width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag Allen key and drop it on the screw to tight all four screws.</span>
+
+    </div>
+
+    <img src="images/transbox.png" id="tb_topplate" style= "position: absolute;  visibility:; left: 815px;
+    top: 130px;
+    height: 185px;
+    width: 219px;
+    border: 0px solid red;" />
+
+    <div id="note_topplate" class="step"  style=" position: absolute; left: 536px;  top: 125px; height: 355px; width: 431px; font-size: 21px; border-radius: 0px; background-color: white; display:none; "><b><u>NOTE</u><br>Repeat the same process with other screws to fix the top plate.</b>
+
+    <img src="images/noteimgtopplate.png" style= "position: absolute; left: 105px; top: 105px; height: 235px;"draggable="false"/>
+
+    </div>
+
+    <input type="button" id="nextButton7" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext8()"/>
+
+</div>
+
+
+<!-- ==============================CANVAS8=========================== -->
+
+ <!-- Scene 8-->
+
+
+
+<div class="simsubscreen" id="canvas8" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can8">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas8-------------------------------->
+
+<div id="question3" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_03" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q3.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">Top plate is usually needed to cover various _______ of drone.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q3" id="optionA3" value="Incorrect Answer">&nbsp;Arms<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q3" id="optionB3" value="Correct Answer">&nbsp;Connections<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q3" id="optionC3" value="Incorrect Answer">&nbsp;Components<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q3" id="optionD3" value="Incorrect Answer">&nbsp;ESC's<br></span>
+
+    <div id="ans_can8" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan8" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can8" style="position:absolute; left: 640px;
+    top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c8()"/>
+
+    <input type="button" id="nextButton8" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext9()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas8-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS8=========================== -->
+
+
+<!-- ==============================CANVAS9=========================== -->
+
+<div class="simsubscreen" id="canvas9" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_stp9_1">
+        <source src="audios/stp9_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp9_2">
+        <source src="audios/stp9_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp9_3">
+        <source src="audios/stp9_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp9_4">
+        <source src="audios/stp9_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_introgear">
+        <source src="audios/introgear.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_notegear">
+        <source src="audios/notegear.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/platecan9.png" id="platecan9" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_platecan9" style= "position: absolute;  visibility:hidden; left: 185px;
+    top: 206px;
+    height: 206px;
+    width: 308px;
+    border: 0px solid red;" onclick="can9plate_flip()" />
+
+<img src="images/plateforgear.png" id="plateforgear" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/gear11.png" id="gear11" style=
+"position: absolute;
+ left: 351px;
+ top: 113px;
+ height: 185px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/zoomcan9.png" id="zoomcan9"   style=
+"position: absolute;
+ height: 415px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+ top: 73px;
+ left: 163px;
+"draggable="false" />
+
+
+<img src="images/tray.png" id="tray" style=
+"position: absolute;
+ left: 850px;
+ top: 370px;
+ height: 170px;
+"draggable="false" />
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+ left: 933px;
+ top: 412px;
+ height: 35px;
+"draggable="false"/>
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+ left: 927px;
+ top: 463px;
+ height: 35px;
+"draggable="false"/>
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+ left: 953px;
+ top: 440px;
+ height: 35px;
+"draggable="false"/>
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+ left: 900px;
+ top: 449px;
+ height: 35px;
+"draggable="false"/>
+
+<div id="tgt_lnkey_can9" style=" position: absolute; top: 185px;
+    left: 376px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 27px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/lnkey.png" id="lnkey_can9" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+"draggable="false" onmouseover="lnkey_hd_can9()" />
+
+<img src="images/lnkey.png" id="lnkey3_can9" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/lnkey.png" id="lnkey2_can9" style=
+"position: absolute;
+ left: 871px;
+ top: 460px;
+ height: 55px;
+ visibility: hidden;
+"draggable="false" ondragstart="step9_4hd()" />
+
+<img src="images/transbox.png" id="tb_lnkey_can9" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+     left: 951px;
+    top: 387px;
+    height: 35px;
+"draggable="false" />
+
+
+<img src="images/nut.png" id="" style=
+"position: absolute;
+     left: 913px;
+    top: 390px;
+    height: 35px;
+"draggable="false" />
+
+
+<div id="tgt_nut2_can9" style=" position: absolute;       top: 217px;
+    left: 409px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut2_can9" style=
+"position: absolute;
+    left: 894px;
+    top: 417px;
+    height: 35px;
+"draggable="false" onmouseover="nut2_hd_can9()" />
+
+
+
+<img src="images/nut.png" id="nut22_can9" style=
+"position: absolute;
+    left: 894px;
+    top: 417px;
+    height: 35px;
+    visibility: hidden;
+"draggable="false"/>
+
+<img src="images/nutf.png" id="nutf2_can9" style=
+"position: absolute;
+ left: 451px;
+    top: 257px;
+    height: 15px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_nut2_can9" style= "position: absolute;  visibility:;     left: 855px;
+    top: 374px;
+    height: 156px;
+    width: 158px;
+    border: 0px solid red;" />
+
+<div id="tgt_nut1_can9" style=" position: absolute;       top: 160px;
+    left: 350px;border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 10px;
+    left: 12px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/nut.png" id="nut1_can9" style=
+"position: absolute;
+ left: 877px;
+ top: 396px;
+ height: 35px;
+"draggable="false" onmouseover="nut1_hd_can9()" />
+
+<img src="images/nut.png" id="nut11_can9" style=
+"position: absolute;
+ left: 877px;
+ top: 396px;
+ height: 35px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp9_3hd()" />
+
+<img src="images/nutf.png" id="nutf1_can9" style=
+"position: absolute;
+    left: 393px;
+    top: 201px;
+    height: 15px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_nut1_can9" style= "position: absolute;  visibility:; left: 855px;
+  top: 374px;
+  height: 156px;
+  width: 158px;
+  border: 0px solid red;" />
+
+  <img src="images/lnkeyhand.png" id="lnkeyhand_can9" style=
+"position: absolute;
+ left: 349px;
+ top: 193px;
+ height: 225px;
+ transform-origin: top;
+ visibility: hidden;
+"draggable="false"  />
+
+  <div id="tgt_gear1" style=" position: absolute; top: 58px; left: 350px; border: 5px dashed black; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 130px;
+    left: 152px; font-style: italic;
+    font-size: 25px; color: black; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+  <img src="images/gear1.png" id="gear1" style=
+"position: absolute;
+  left: 830px;
+    top: 80px;
+ height: 70px;
+ visibility: ;
+"draggable="false" onmouseover="gear1_hd()" />
+
+<img src="images/gear1.png" id="gear2" style=
+"position: absolute;
+  left: 830px;
+    top: 80px;
+ height: 70px;
+ visibility:hidden;
+"draggable="false" ondragstart="step9_2hd()" />
+
+<img src="images/transbox.png" id="tb_gear1" style= "position: absolute;  visibility:; left: 765px;
+  top: 34px;
+  height: 156px;
+  width: 409px;
+  border: 0px solid red;" />
+
+<img src="images/gear2.png" id="" style=
+"position: absolute;
+ left: 830px;
+ top: 155px;
+ height: 70px;
+ visibility: ;
+"draggable="false"/>
+
+<img src="images/gear3.png" id="" style=
+"position: absolute;
+ left: 830px;
+ top: 303px;
+ height: 74px;
+ visibility: ;
+"draggable="false"/>
+
+ <img src="images/gear4.png" id="" style=
+"position: absolute;
+ left: 830px;
+ top: 237px;
+ height: 67px;
+ visibility: ;
+"draggable="false"/>
+
+
+<img src="images/arowdwn.png" id="arowdwn9_1" style= "position: absolute;  visibility: hidden; left: 475px; top: 265px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<div id="step9_1" class="step" style=" position: absolute;left: 552px;
+    top: 140px; height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on top plate to flip the quadcopter.</span>
+
+</div>
+
+<div id="step9_2" class="step" style=" position: absolute; left: 850px;
+    top: 180px; height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag landing gear and put it on the center plate.</span>
+
+</div>
+
+<div id="step9_3" class="step" style=" position: absolute; left: 794px;
+    top: 270px;
+    height: 86px;
+    width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 23px; font-size: 18px; font-weight: bold;">Drag screws one by one and put them on gear.</span>
+
+    </div>
+
+
+<div id="step9_4" class="step" style=" position: absolute; left: 794px;
+    top: 270px;
+    height: 86px;
+    width: 255px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag Allen key and drop it on the screw to tight both screws.</span>
+
+    </div>
+
+
+<div id="intro_gear" class="introduction" style="position: absolute;
+     left: 185px;
+    top: 93px;
+    width: 605px;
+    height: 256px;display:none;">
+
+     <span style="position: absolute;     left: 270px;
+    top: 18px; font-size: 34px;"><u>Landing Gear</u></span> 
+
+    <span style="position: absolute;     left: 185px;
+    top: 84px; font-size: 23px;
+    width: 430px;"> The landing gear adds an extra protection to your flying platform and all other precious equipment. </span>
+
+    <img src="images/gear1.png" style= "position: absolute; left: -20px;
+    top: 99px;
+    height: 65px;
+    transform: rotate(55deg);"draggable="false"/>
+    
+    <input type="button" id="skpbtn_gear" style="position:absolute; top: 195px;    left: 455px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_gear()"/>
+
+    <input type="button" id="okbtn_gear" style="position:absolute;     top: 195px;    left: 455px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_gear()"/>
+
+    </div>
+
+    <div id="note_gear" class="step"  style=" position: absolute;      left: 473px;
+    top: 107px;
+    height: 370px;
+    width: 393px; font-size: 21px; border-radius: 0px; background-color: white; display:none; "><b><u>NOTE</u><br>Repeat the same process with other three gears.</b>
+
+    <img src="images/platecan10.png" style= "position: absolute;     left: 25px;
+    top: 60px;
+    height: 345px;"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute;  left: 145px;
+    top: 297px;
+    height: 55px;"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute;     left: 30px;
+    top: 200px;
+    height: 55px;
+    transform: rotate(90deg);"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute;     left: 245px;
+    top: 200px;
+    height: 55px;
+    transform: rotate(270deg);"draggable="false"/>
+
+    </div>
+
+    <input type="button" id="nextButton9" style="position:absolute; left: 1124px;
+    top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext10()"/>
+
+</div>
+
+
+<!-- ==============================CANVAS9=========================== -->
+
+<!-- ==============================CANVAS10=========================== -->
+
+ <!-- Scene 10-->
+
+
+
+<div class="simsubscreen" id="canvas10" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can10">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas10-------------------------------->
+
+<div id="question4" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_04" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q4.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">How many landing gears are used in a quadcopter?
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q4" id="optionA4" value="Incorrect Answer">&nbsp;6<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q4" id="optionB4" value="Correct Answer">&nbsp;3<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q4" id="optionC4" value="Incorrect Answer">&nbsp;4<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q4" id="optionD4" value="Incorrect Answer">&nbsp;5<br></span>
+
+    <div id="ans_can10" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan10" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can10" style="position:absolute; left: 640px; top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c10()"/>
+
+    <input type="button" id="nextButton10" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext11()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas10-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS10=========================== -->
+
+<!-- ==============================CANVAS11=========================== -->
+
+<div class="simsubscreen" id="canvas11" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_stp11_1">
+        <source src="audios/stp11_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp11_2">
+        <source src="audios/stp11_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp11_3">
+        <source src="audios/stp11_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp11_4">
+        <source src="audios/stp11_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_intropro">
+        <source src="audios/intropro.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_notepro">
+        <source src="audios/notepro.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/platecan10.png" id="platecan10" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+"draggable="false"/>
+
+<img src="images/transbox.png" id="tb_platecan11" style= "position: absolute;  visibility:hidden;   left: 185px;
+    top: 76px;
+    height: 455px;
+    width: 308px;
+    border: 0px solid red;" onclick="can11plate_flip()" />
+
+<img src="images/platecan10_gear.png" id="platecan10_gear" style=
+"position: absolute;
+ left: 25px;
+ top: 2px;
+ height: 625px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/tray.png" id="" style=
+"position: absolute;
+    left: 740px;
+    top: 370px;
+    height: 170px;
+    width: 370px;
+"draggable="false" />
+
+
+
+<div id="tgt_pro_can11" style=" position: absolute; top: 5px; left: 340px; border: 5px dashed black; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;     top: 15px;
+    left: 152px; font-style: italic;
+    font-size: 25px; color: black; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/pro_can11.png" id="pro_can11" style=
+"position: absolute;
+ left: 770px;
+ top: 80px;
+ height: 60px;
+"draggable="false" onmouseover="pro_can11hd()" />
+
+<img src="images/pro_can11.png" id="pro2_can11" style=
+"position: absolute;
+ left: 770px;
+ top: 80px;
+ height: 60px;
+ visibility: hidden;
+"draggable="false" ondragstart="step11_2hd()" />
+
+<img src="images/transbox.png" id="tb_pro_can11" style= "position: absolute;  visibility:; left: 760px; top: 34px; height: 156px; width: 409px; border: 0px solid red;" />
+
+    <img src="images/zoompro.png" id="zoompro"   style=
+"position: absolute;
+ height: 466px;
+ border: 5px solid white;
+ border-radius: 288px;
+ display:none;
+ top: 2px;
+ left: 262px;
+"draggable="false" />
+
+<div id="tgt_keybolt" style=" position: absolute; top: 95px; left: 480px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute;    top: 50px;
+    left: 105px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/keybolt.png" id="keybolt" style=
+"position: absolute;
+ left: 781px;
+ top: 456px;
+ height: 53px;
+"draggable="false" onmouseover="keybolt_hd()" />
+
+<img src="images/keybolt.png" id="keybolt2" style=
+"position: absolute;
+ left: 781px;
+ top: 456px;
+ height: 53px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp11_4hd()" />
+
+<img src="images/keybolt.png" id="keybolt3" style=
+"position: absolute;
+ left: 781px;
+ top: 456px;
+ height: 53px;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/transbox.png" id="tb_keybolt" style= "position: absolute;  visibility:; left: 751px;
+  top: 375px;
+  height: 156px;
+  width: 344px;
+  border: 0px solid red;" />
+
+<div id="tgt_probolt" style=" position: absolute; top: 95px; left: 480px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 9px; left: 2px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/probolt.png" id="probolt" style=
+"position: absolute;
+ left: 810px;
+ top: 397px;
+ height: 45px;
+"draggable="false" onmouseover="probolt_hd()" />
+
+<img src="images/transbox.png" id="tb_probolt" style= "position: absolute;  visibility:; left: 751px;
+  top: 375px;
+  height: 156px;
+  width: 344px;
+  border: 0px solid red;" />
+
+<img src="images/probolt.png" id="probolt2" style=
+"position: absolute;
+ left: 810px;
+ top: 397px;
+ height: 45px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp11_3hd()" />
+
+
+
+<img src="images/probolt.png" id="" style=
+"position: absolute;
+ left: 870px;
+ top: 397px;
+ height: 45px;
+"draggable="false" />
+
+<img src="images/probolt.png" id="" style=
+"position: absolute;
+ left: 930px;
+ top: 397px;
+ height: 45px;
+"draggable="false" />
+
+<img src="images/probolt.png" id="" style=
+"position: absolute;
+ left: 990px;
+ top: 397px;
+ height: 45px;
+"draggable="false" />
+
+<img src="images/pro_can11.png" id="" style=
+"position: absolute;
+ left: 770px;
+ top: 145px;
+ height: 60px;
+"draggable="false" />
+
+<img src="images/pro_can11.png" id="" style=
+"position: absolute;
+ left: 770px;
+ top: 210px;
+ height: 60px;
+"draggable="false" />
+
+<img src="images/pro_can11.png" id="" style=
+"position: absolute;
+ left: 770px;
+ top: 278px;
+ height: 60px;
+"draggable="false" />
+
+<img src="images/keybolthand.png" id="keybolthand" style=
+"position: absolute;
+ left: 493px;
+ top: 145px;
+ height: 203px;
+ transform-origin: left;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/probolt.png" id="probolts" style=
+"position: absolute;
+ left: 492px;
+ top: -397px;
+ height: 1161px;
+ width: 43px;
+ transform: rotateX(88deg);
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/arowdwn.png" id="arowdwn11_1" style= "position: absolute;  visibility: hidden; left: 475px; top: 265px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<div id="step11_1" class="step" style=" position: absolute;left: 552px;
+    top: 140px; height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on quadcopter to flip the quadcopter.</span>
+
+</div>
+
+<div id="step11_2" class="step" style=" position: absolute;left: 845px;
+    top: 160px; height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag propeller and put it on the motor. </span>
+
+</div>
+
+<div id="step11_3" class="step" style=" position: absolute; left: 775px;
+    top: 280px;height: 70px; width: 240px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag propeller nut and put it on the propeller. </span>
+
+</div>
+
+<div id="step11_4" class="step" style=" position: absolute;     left: 775px;
+    top: 285px;
+    height: 70px;
+    width: 270px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag wrench and put it on the propeller nut to tight the nut. </span>
+
+</div>
+
+<div id="intro_propeller" class="introduction" style="position: absolute;
+    left: 125px;
+    top: 60px;
+    width: 605px;
+    height: 325px;display:none;">
+
+     <span style="position: absolute; left: 270px; top: 18px; font-size: 34px;"><u>Propellers</u></span> 
+
+    <span style="position: absolute; left: 185px; top: 84px; font-size: 23px;
+    width: 430px;">Propellers work by spinning from the force applied by the motor. The higher air pressure on the bottom of the propellers creates lift for the entire quadcopter. Their rotation also keeps the quadcopter stable and propels it to move forwards.</span>
+
+    <img src="images/pro_can11.png" style= "position: absolute; left: -90px;
+    top: 145px; height: 45px; transform: rotate(90deg);"draggable="false"/>
+
+     <img src="images/pro_can11.png" style= "position: absolute; left: -22px;
+    top: 145px; height: 45px; transform: rotate(90deg);"draggable="false"/>
+    
+    <input type="button" id="skpbtn_pro" style="position:absolute;     top: 275px;
+    left: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_pro()"/>
+
+    <input type="button" id="okbtn_pro" style="position:absolute;     top: 275px;
+    left: 370px;cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_pro()"/>
+
+    </div>
+
+    <div id="note_pro" class="step" style=" position: absolute; left: 660px;
+    top: 15px; height: 490px; width: 495px; font-size: 21px; border-radius: 0px; background-color: white; display:none; "><b><u>NOTE</u><br>Repeat the same process with other three propellers.</b>
+
+    <img src="images/platecan10_gear.png" style= "position: absolute; left: 85px;
+    top: 115px; height: 345px;"draggable="false"/>
+
+    <img src="images/propeller1.png" style= "position: absolute; left: 274px;
+    top: 90px; height: 150px;"draggable="false"/>
+
+     <img src="images/probolt.png" style= "position: absolute; left: 374px;
+    top: -84px; height: 492px; width: 12px; transform: rotateX(89deg);"draggable="false"/>
+
+    <img src="images/propeller1.png" style= "position: absolute; left: 39px;
+    top: 333px; height: 150px; "draggable="false"/>
+
+     <img src="images/probolt.png" style= "position: absolute; left: 139px;
+    top: 159px; height: 492px; width: 12px; transform: rotateX(89deg);"draggable="false"/>
+
+    <img src="images/propeller2.png" style= "position: absolute; left: 38px;
+    top: 92px; height: 150px;"draggable="false"/>
+
+     <img src="images/probolt.png" style= "position: absolute; left: 137px;
+    top: -83px; height: 492px; width: 12px; transform: rotateX(89deg);"draggable="false"/>
+
+    <img src="images/propeller2.png" style= "position: absolute; left: 276px;
+    top: 333px; height: 150px; "draggable="false"/>
+
+    <img src="images/probolt.png" style= "position: absolute; left: 374px;
+    top: 159px; height: 492px; width: 12px; transform: rotateX(89deg);"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute; left: 365px; top: 259px; height: 55px; transform: rotate(200deg);"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute; left: 210px; top: 377px; height: 55px; transform: rotate(-85deg);"draggable="false"/>
+
+    <img src="images/arrow.png" style= "position: absolute; left: 33px; top: 248px; height: 55px; transform: rotate(13deg);"draggable="false"/>
+
+    </div>
+
+    <input type="button" id="nextButton11" style="position:absolute; left: 1124px; top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext12()"/>
+
+</div>
+
+
+<!-- ==============================CANVAS11=========================== -->
+
+<!-- ==============================CANVAS12=========================== -->
+
+ <!-- Scene 12-->
+
+
+
+<div class="simsubscreen" id="canvas12" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can12">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas12-------------------------------->
+
+<div id="question5" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<span id="mrk_05" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q5.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">Propellers work by spinning from the force applied by the _______.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q5" id="optionA5" value="Incorrect Answer">&nbsp;Motor<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q5" id="optionB5" value="Correct Answer">&nbsp;Arm<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q5" id="optionC5" value="Incorrect Answer">&nbsp;ESC<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q5" id="optionD5" value="Incorrect Answer">&nbsp;NAZA Flight Controller<br></span>
+
+    <div id="ans_can12" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan12" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can12" style="position:absolute; left: 640px; top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c12()"/>
+
+    <input type="button" id="nextButton12" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext13()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas12-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS12=========================== -->
+
+<!-- ==============================CANVAS13=========================== -->
+
+<div class="simsubscreen" id="canvas13" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+<audio id="aud_stp13_1">
+        <source src="audios/stp13_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp13_2">
+        <source src="audios/stp13_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp13_3">
+        <source src="audios/stp13_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp13_4">
+        <source src="audios/stp13_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp13_5">
+        <source src="audios/stp13_5.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/platecan13.png" id="platecan13" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+"draggable="false"/>
+
+<img src="images/plategpsfix.png" id="plategpsfix" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ visibility: hidden;
+"draggable="false"/>
+
+<img src="images/zoomgps_can13.png" id="zoomgps_can13"   style=
+"position: absolute;
+ height: 447px;
+ border: 5px solid white;
+ border-radius: 315px;
+ top: 4px;
+ left: 242px;
+ display:none;
+"draggable="false" />
+
+<img src="images/gpswire1_can13.png" id="gpswire1_can13" style=
+"position: absolute;
+ left: 412px;
+ top: 165px;
+ height: 230px;
+ display:none;
+"draggable="false" />
+
+<img src="images/tray.png" id="tray" style=
+"position: absolute;
+ left: 860px;
+ top: 236px;
+ height: 230px;
+"draggable="false" />
+
+<img src="images/tape.png" id="tape111_can13" style=
+"position: absolute;
+ left: 348px;
+ top: 229px;
+ height: 30px;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/standgps.png" id="standgps3" style=
+"position: absolute;
+ left: 298px;
+ top: 86px;
+ height: 230px;
+ transform: rotateX(55deg);
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/tape.png" id="tape222_can13" style=
+"position: absolute;
+ left: 336px;
+ top: 142px;
+ height: 34px;
+ transform: rotateX(61deg);
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/gpswire2_can13.png" id="gpswire2_can13" style=
+"position: absolute;
+ left: 287px;
+ top: 98px;
+ height: 84px;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/gpszoom2.png" id="gpszoom_han" style=
+"position: absolute;
+ left: 294px;
+ top: 90px;
+ height: 115px;
+ width: 115px;
+ transform: rotateX(62deg);
+ visibility: hidden;
+"draggable="false" />
+
+<div id="tgt_tape2_can13" style=" position: absolute; top: 110px; left: 302px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 13px; left: 5px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+
+<img src="images/tape.png" id="tape2_can13" style=
+"position: absolute;
+ left: 910px;
+ top: 363px;
+ height: 40px;
+"draggable="false" onmouseover="tape2_can13_hd()" />
+
+<img src="images/tape.png" id="tape22_can13" style=
+"position: absolute;
+ left: 910px;
+ top: 363px;
+ height: 40px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp13_4hd()" />
+
+<img src="images/transbox.png" id="tb_tape2_can13" style= "position: absolute; visibility:; left: 865px;
+  top: 242px;
+  height: 214px;
+  width: 218px;
+  border: 0px solid red;"/>
+
+<div id="tgt_standgps" style=" position: absolute; top: 160px; left: 301px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 58px; left: 5px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/standgps.png" id="standgps" style=
+"position: absolute;
+    left: 972px;
+    top: 249px;
+    height: 190px;
+"draggable="false" onmouseover="standgps_hd()"/>
+
+<img src="images/standgps.png" id="standgps2" style=
+"position: absolute;
+    left: 972px;
+    top: 249px;
+    height: 190px;
+    visibility: hidden;
+"draggable="false" ondragstart="stp13_3hd()"/>
+
+<img src="images/transbox.png" id="tb_standgps" style= "position: absolute; visibility:; left: 865px;
+  top: 242px;
+  height: 214px;
+  width: 218px;
+  border: 0px solid red;"/>
+
+<div id="tgt_tape1_can13" style=" position: absolute; top: 190px; left: 312px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 13px; left: 5px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/tape.png" id="tape1_can13" style=
+"position: absolute;
+ left: 910px;
+ top: 280px;
+ height: 40px;
+"draggable="false" onmouseover="tape1_can13_hd()" />
+
+<img src="images/tape.png" id="tape11_can13" style=
+"position: absolute;
+ left: 910px;
+ top: 280px;
+ height: 40px;
+ visibility: hidden;
+"draggable="false" ondragstart="stp13_2hd()" />
+
+
+
+<img src="images/transbox.png" id="tb_tape1_can13" style= "position: absolute; visibility:; left: 865px;
+  top: 242px;
+  height: 214px;
+  width: 218px;
+  border: 0px solid red;"/>
+
+  <!-- ================================WIRE 1============================ -->
+
+
+<svg id="svg_can13" style="visibility:hidden;">
+ 
+  <path class="path_can13" id="path_can13" /> 
+
+<img src="images/gpszoom.png" class="handle_can13" id="handle1_can13" style=
+"   position: absolute;
+      left: -54px;
+    top: -88px;
+    height: 130px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/femalesoct.png" class="handle_can13" id="handle11_can13" style=
+"   position: absolute;
+    left: -51px;
+    top: -17px;
+    height: 55px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle1_div_can13" style=" position: absolute; height: 0px; width: 0px; left: 262px;
+    top: 40px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<img src="images/transbox.png" id="tb_gpsmove" style= "position: absolute; visibility:hidden;     left: 520px;
+    top: 245px;
+    height: 125px;
+    width: 118px;
+   border: 0px solid red;" />
+
+    <!-- ================================WIRE 1======================== -->
+
+<img src="images/arowdwn.png" id="arowdwn13_1" style= "position: absolute;  visibility: hidden; left: 475px; top: 265px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn13_2" style= "position: absolute;  visibility: hidden;     left: 640px;
+    top: 250px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn13_3" style= "position: absolute;  visibility: hidden;    left: 230px;
+    top: 120px;
+    height: 85px;
+    transform: rotate(270deg);"draggable="false"/>
+
+<div id="step13_1" class="step" style=" position: absolute; left: 455px;
+    top: 185px;
+    height: 70px;
+    width: 185px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on top plate for zoom view.</span>
+
+</div>
+
+<div id="step13_2" class="step" style=" position: absolute; left: 845px;
+ top: 147px;
+ height: 70px;
+ width: 245px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag double sided tape and put it on the top plate.</span>
+
+</div>
+
+<div id="step13_3" class="step" style=" position: absolute; left: 845px;
+ top: 147px;
+ height: 70px;
+ width: 260px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag GPS stand and put it on the tape to fix it with top plate.</span>
+
+</div>
+
+<div id="step13_4" class="step" style=" position: absolute; left: 845px;
+ top: 147px;
+ height: 70px;
+ width: 260px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag another double sided tape and put it on the GPS stand.</span>
+
+</div>
+
+<div id="step13_5" class="step" style=" position: absolute; left: 470px;
+    top: 147px;
+    height: 70px;
+    width: 190px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag GPS and fix it on the GPS stand.</span>
+
+</div>
+
+<img src="images/transbox.png" id="tb_platecan13zoom" style= "position: absolute; visibility:hidden; left: 210px;
+   top: 195px;
+   height: 205px;
+   width: 285px;
+   border: 0px solid red;" onclick="platecan13_zoom()" />
+
+   <input type="button" id="nextButton13" style="position:absolute; left: 1124px; top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext14()"/>
+</div>
+
+<!-- ==============================CANVAS13=========================== -->
+
+
+<!-- ==============================CANVAS14=========================== -->
+
+ <!-- Scene 14-->
+
+
+
+<div class="simsubscreen" id="canvas14" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_congo1mrk_can14">
+        <source src="audios/congo1mrk.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div id="" style=" position: absolute; left: 0px; top: 0px; height: 609px; width: 1199px; font-size: 21px; opacity: 0.4; background-color: black;
+  " >
+
+</div>
+
+
+<!-------------------------MCQ canvas14-------------------------------->
+
+<div id="question6" style=" position: absolute; width: 845px; height: 412px; left: 155px; top: 85px;padding: 10px; border: 7px solid white; background-image: linear-gradient(45deg, #ffd8cb, #e9e4f0); " >
+
+<span style="font-size: 30px; font-weight: bold; margin-left: 320px; margin-right: 150px;" > <u>Test Your Memory</u></span>
+
+<span style="font-size: 22px; font-weight: bold; position: absolute; top: 20px;
+    left: 655px;" > Total Marks:</span>
+
+<!-- <span id="mrk_00" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px;" > </span>
+ -->
+<span id="mrk_06" style="font-size: 22px; font-weight: bold; position: absolute; top: 20px; left: 790px; visibility: ;" > </span>
+
+<span style="position: absolute; left: 50px; top: 80px; font-size: 24px; font-weight: bold;" >Q6.</span>
+
+<span style="position: absolute; left: 90px; top: 80px; font-size: 24px; font-weight: bold;">GPS module allows to know _______.
+</span>
+
+    <br>
+
+     <span  style="position: absolute; left: 45px; top: 160px; font-size: 24px;"><strong> A </strong>&nbsp;&nbsp;<input type="radio" name="q6" id="optionA6" value="Incorrect Answer">&nbsp;Directions<br></span>
+
+       <span style="position: absolute; left: 455px; top: 160px; font-size: 24px;"><strong> B</strong> &nbsp;&nbsp;<input type="radio" name="q6" id="optionB6" value="Correct Answer">&nbsp;Signals<br></span>
+
+      <span style="position: absolute; left: 45px; top: 260px; font-size: 24px;"><strong>C </strong>&nbsp;&nbsp;<input type="radio" name="q6" id="optionC6" value="Incorrect Answer">&nbsp;Network<br></span>
+
+      <span style="position: absolute; left: 455px; top: 260px; font-size: 24px;"><strong> D</strong> &nbsp;&nbsp;<input type="radio" name="q6" id="optionD6" value="Incorrect Answer">&nbsp;Location<br></span>
+
+    <div id="ans_can14" style= "color:red; left: 330px; top: 338px; position: absolute; font-size: 30px; font-weight: bold;">
+    </div>
+
+    <div id="got_mrkcan14" style= "color:black; left: 305px; top: 387px; position: absolute; font-size: 22px; font-weight: bold; visibility: hidden;">Congrats !! You get "1" mark.
+    </div>
+
+    <input type="button" id="showans_can14" style="position:absolute; left: 640px; top: 340px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Submit&nbsp;" onclick="ansshw_c14()"/>
+
+    <input type="button" id="nextButton14" style="position:absolute; left: 770px;
+    top: 370px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color: #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext15()"/>
+
+
+</div>
+
+<!-------------------------MCQ canvas14-------------------------------->
+
+
+</div>
+
+
+<!-- ==============================CANVAS14=========================== -->
+
+
+<!-- ==============================CANVAS15=========================== -->
+
+<div class="simsubscreen" id="canvas15" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+  <audio id="aud_stp15_1">
+        <source src="audios/stp15_1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp15_2">
+        <source src="audios/stp15_2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp15_3">
+        <source src="audios/stp15_3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp15_4">
+        <source src="audios/stp15_4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_stp15_5">
+        <source src="audios/stp15_5.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="aud_introbattery">
+        <source src="audios/introbattery.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/table_topview.png" id="" style=
+"position: absolute;
+ left: 16px;
+ top: 33px;
+ height: 547px;
+"draggable="false"/>
+
+<img src="images/table_mat.png" id="" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ width: 1131px;
+ border-radius: 16px;
+"draggable="false"/>
+
+<img src="images/plategpsfix.png" id="plategpsfix_last" style=
+"position: absolute;
+ left: 36px;
+ top: 54px;
+ height: 509px;
+ visibility: ;
+"draggable="false"/>
+
+<img src="images/fullfinal.png" id="fullfinal" style=
+"position: absolute;
+     left: 34px;
+    top: 50px;
+ height: 509px;
+ visibility:hidden;
+"draggable="false"/>
+
+<img src="images/battery.png" id="batterys" style=
+"position: absolute;
+ left: 214px;
+ top: 250px;
+ height: 100px;
+ display: none;
+"draggable="false" />
+
+<img src="images/belttied.png" id="belttied2" style=
+"position: absolute;
+ left: 310px;
+ top: 268px;
+ height: 90px;
+ display: none;
+"draggable="false" />
+
+<img src="images/zoombattery.png" id="zoombattery"   style=
+"position: absolute;
+ height: 515px;
+ border: 5px solid white;
+ border-radius: 315px;
+ top: 4px;
+ left: 160px;
+ display:none;
+"draggable="false" />
+
+<img src="images/zoombatterywire.png" id="zoombatterywire"   style=
+"position: absolute;
+ height: 515px;
+ border: 5px solid white;
+ border-radius: 315px;
+ top: 4px;
+ left: 160px;
+ display:none;
+"draggable="false" />
+
+<img src="images/zoomwire2b.png" id="zoomwire2b" style=
+"position: absolute;
+ left: 254px;
+ top: 204px;
+ height: 216px;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/plugbattery2.png" id="plugbattery" style=
+"position: absolute;
+ left: 381px;
+ top: 120px;
+ height: 90px;
+ visibility: hidden;
+"draggable="false" />
+
+<img src="images/zoomwire1b.png" id="zoomwire1b" style=
+"position: absolute;
+ left: 235px;
+ top: 294px;
+ height: 128px;
+ display:none;
+"draggable="false" />
+
+<img src="images/transbox.png" id="tb_plategpsfix" style= "position: absolute; visibility:hidden; left: 210px;
+  top: 195px;
+  height: 205px;
+  width: 285px;
+  border: 0px solid red;" onclick="platecan15_zoom()" />
+
+   
+<div id="tgt_belt" style=" position: absolute; top: 33px; left: 362px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 207px; left: 5px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+
+<img src="images/belt.png" id="belt" style=
+"position: absolute;
+ left: 1077px;
+ top: 79px;
+ width: 50px;
+ visibility: ;
+"draggable="false" onmouseover="belt_hd()" />
+
+<img src="images/belt.png" id="belt2" style=
+"position: absolute;
+ left: 1077px;
+ top: 79px;
+ width: 50px;
+ visibility:hidden;
+"draggable="false" ondragstart="stp15_2hd()" />
+
+<img src="images/beltbck.png" id="beltbck" style=
+"position: absolute;
+ left: 388px;
+ top: 79px;
+ width: 50px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/transbox.png" id="tb_beltbck" style= "position: absolute; visibility:hidden; left: 369px;
+  top: 75px;
+  height: 411px;
+  width: 85px;
+  border: 0px solid red;" onclick="beltfix()" />
+
+<img src="images/platebeltup.png" id="platebeltup" style=
+"position: absolute;
+ left: 382px;
+ top: 240px;
+ height: 84px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/transbox.png" id="tb_belt" style= "position: absolute; visibility:; left: 1052px;
+  top: 50px;
+  height: 460px;
+  width: 105px;
+  border: 0px solid red;" />
+
+   <div id="tgt_battery" style=" position: absolute; top: 213px; left: 298px; border: 5px dashed white; width: 0px; height: 0px; visibility: hidden; ">
+
+<center style=" position: absolute; top: 47px; left: 55px; font-style: italic;
+    font-size: 25px; color: white; font-weight: bold;"> Drop Here</center>
+
+</div>
+
+<img src="images/battery.png" id="battery" style=
+"position: absolute;
+ left: 810px;
+ top: 335px;
+ height: 115px;
+ visibility: ;
+"draggable="false" onmouseover="battery_hd()" />
+
+<img src="images/battery.png" id="battery2" style=
+"position: absolute;
+ left: 810px;
+ top: 335px;
+ height: 125px;
+ visibility:hidden;
+"draggable="false" ondragstart="stp15_3hd()" />
+
+<img src="images/belttied.png" id="belttied" style=
+"position: absolute;
+ left: 390px;
+ top: 200px;
+ width: 50px;
+ visibility:hidden;
+"draggable="false" />
+
+<img src="images/transbox.png" id="tb_battery" style= "position: absolute; visibility:; left: 782px;
+  top: 330px;
+  height: 140px;
+  width: 275px;
+  border: 0px solid red;" />
+
+   <!-- ================================WIRE 1============================ -->
+
+
+<svg id="svg_can15" style="visibility:hidden;">
+ 
+  <path class="path_can15" id="path_can15" /> 
+
+<img src="images/plugbattery.png" class="handle_can15" id="handle1_can15" style=
+"   position: absolute;
+      left: -22px;
+    top: -79px;
+    height: 90px;
+    visibility:hidden;" draggable="false"/>
+
+<img src="images/femalesoct.png" class="handle_can15" id="handle11_can15" style=
+"   position: absolute;
+    left: -51px;
+    top: -17px;
+    height: 55px;
+    visibility:hidden;" draggable="false"/>
+
+</svg> 
+
+<!-- ============================================================ -->
+
+<div id="handle1_div_can15" style=" position: absolute; height: 0px; width: 0px; left: 377px;
+    top: 125px; visibility: hidden; color: black; border: 0px dashed #080707;" ><span style="position: absolute; left: 7px; top: 9px; font-weight: bold; color: #fc4141; font-size: 20px;" ></span></div>
+
+<img src="images/transbox.png" id="tb_bsocketmove" style= "position: absolute; visibility:hidden;  left: 191px;
+    top: 194px;
+    height: 125px;
+    width: 118px;
+   border: 0px solid red;" />
+
+    <!-- ================================WIRE 1======================== -->
+
+<img src="images/arowdwn.png" id="arowdwn15_1" style= "position: absolute;  visibility: hidden; left: 475px; top: 265px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn15_2" style= "position: absolute;  visibility: hidden; left: 475px; top: 324px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn15_3" style= "position: absolute;  visibility: hidden; left: 285px;
+    top: 203px; height: 85px; transform: rotate(90deg);"draggable="false"/>
+
+<img src="images/arowdwn.png" id="arowdwn15_4" style= "position: absolute;  visibility: hidden;     left: 290px;
+    top: 85px;
+    height: 85px;
+    transform: rotate(270deg);"draggable="false"/>
+
+<div id="step15_1" class="step" style=" position: absolute; left: 455px;
+    top: 185px;
+    height: 70px;
+    width: 185px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on top plate for zoom view.</span>
+
+</div>
+
+<div id="step15_2" class="step" style=" position: absolute; left: 835px;
+    top: 185px;
+    height: 70px;
+    width: 185px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag battery strip and put it on the top plate.</span>
+
+</div>
+
+<div id="step15_3" class="step" style=" position: absolute; 
+    left: 806px;
+    top: 235px;
+    height: 70px;
+    width: 225px;
+ display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag battery and put it on the top plate.</span>
+
+</div>
+
+<div id="step15_4" class="step" style=" position: absolute;     left: 457px;
+    top: 240px;
+    height: 74px;
+    width: 231px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Click on battery strip to fix battery with quadcopter.</span>
+
+</div>
+
+<div id="step15_5" class="step" style=" position: absolute;     left: 380px;
+    top: 195px;
+    height: 85px;
+    width: 237px; display:none;" >
+
+    <span style="position: absolute; left: 0px; top: 13px; font-size: 18px; font-weight: bold;">Drag battery female socket and fix it with the male socket of deans plug.</span>
+
+</div>
+
+<div id="intro_battery" class="introduction" style="position: absolute;
+        left: 156px;
+    top: 203px;
+    width: 605px;
+    height: 295px;display:none;">
+
+     <span style="position: absolute;        left: 275px;
+    top: 20px; font-size: 34px;"><u>Battery</u></span> 
+
+    <span style="position: absolute;     left: 166px;
+    top: 85px;
+    font-size: 23px;
+    width: 430px;"> An FPV Drone Battery is the foundational component of a quadcopter and must be considerately selected to achieve an ideal balance between performance and flight time.</span>
+
+    <img src="images/battery.png" style= "position: absolute;  left: -16px;
+    top: 99px;
+    height: 115px;
+    transform: rotate(90deg);"draggable="false"/>
+    
+    <input type="button" id="skpbtn_battery" style="position:absolute; top: 250px;    left: 320px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;OK &nbsp;" onclick="skp_battery()"/>
+
+    <input type="button" id="okbtn_battery" style="position:absolute;     top: 250px;    left: 320px; cursor:pointer; font-size: 19px; background-color: #501b26; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px; visibility: hidden;" value="&nbsp;OK &nbsp;" onclick="ok_battery()"/>
+
+    </div>
+
+    <div id="note_complete" class="step"  style=" position: absolute; left: 590px; top: 225px;
+    height: 100px;
+    width: 460px;
+    font-size: 24px;
+    padding-top: 30px;
+    border-radius: 0px;
+    background-color: white; display:none; "><b>Software based components of drone assembled successfully.</b>
+
+    </div>
+
+    <input type="button" id="nextButton15" style="position:absolute; left: 1124px; top: 532px; cursor:pointer; font-size: 19px; background-color: #501b26; visibility:hidden; font-family: 'Acme', sans-serif; padding-top: 5px; color:  #FFF; border: 3px solid white; padding-bottom: 5px;" value="&nbsp;Next&nbsp;" onclick="navNext16()"/>
+
+
+</div>
+
+<!-- ==============================CANVAS15=========================== -->
+
+<!-- ==============================CANVAS16=========================== -->
+
+ <!-- Scene 16-->
+
+
+
+<div class="simsubscreen" id="canvas16" style="visibility: hidden; background-image: url(images/b4.jpg);" >
+
+
+  <table  style="position: absolute; border: 1px solid white; height: 400px; width: 1090px; left: 55px; top: 15px; color: black; background-color: white; font-weight: bold; " border="1">
+    <tr style="text-align: center; font-size: 20px;">
+      <td >
+        Question
+      </td>
+
+      <td>
+        Correct Answer
+      </td>
+
+      <!-- <td>
+        Your Answer
+      </td>
+
+      <td>
+        Marks Obtained
+      </td> -->
+    </tr>
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px; ">
+         Q1. PMU EXP wire connects with _______.
+      </td>
+
+      <td style="text-align: center;">
+        EXP Port
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q2. Receiver is used to receive _______
+      </td>
+
+      <td style="text-align: center;">
+        Radio Signals
+      </td>
+
+     <!--  <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q3. Top plate is usually needed to cover various _______ of drone.
+      </td>
+
+      <td style="text-align: center;">
+        Components
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+        Q4. How many landing gears are used in a quadcopter?
+      </td>
+
+      <td style="text-align: center;">
+        4
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+        Q5. Propellers work by spinning from the force applied by the _______.
+      </td>
+
+      <td style="text-align: center;">
+         Motor
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+
+    <tr style=" font-size: 18px;">
+      <td style="padding-left: 10px;">
+         Q6. GPS module allows to know _______.
+      </td>
+
+      <td style="text-align: center;">
+        Location
+      </td>
+
+      <!-- <td>
+        
+      </td>
+
+      <td>
+        
+      </td> -->
+    </tr>
+
+  </table>
+
+  <div style="position: absolute; font-weight: bold;    left: 460px;
+    top: 445px; background-color: white; border: 1px solid black; height: 50px; width: 290px; font-size: 18px;"><span style="position: absolute;left: 18px;
+    top: 10px;">Total Marks Obtained :</span>
+
+  <span style="position: absolute;left: 240px;
+    top: 10px;">/ 6</span>
+
+    <span id="totalmarks" style="position: absolute;left: 225px;
+    top: 10px;"></span></div>
+
+  <div style="position: absolute; font-weight: bold;   left: 414px;
+    top: 525px;background-color: white; border: 1px solid black; height: 50px; width: 393px; font-size: 18px;"><span style="position: absolute;left: 18px;
+    top: 10px;">Thank You For Performing the Experiment</span></div>
+
+</div>
+
+<!-- ================================================================ -->
+<!-- ==================================================================== -->
+<!-- ===================================================================== -->
+<!-- ==================================================================== -->
+
+
+
+
+     <!-- Don't Write Code Below This Line -->
+<!-- ========================================== -->
+</div> <!---firsstdiv--->
+
+<div style="text-align: center; font-size: 12px; width:1200px; border:1px solid steelblue; position: relative; border-top:none; color: #FFF; background-color: steelblue; height: 30px; padding-top: 5px; padding-bottom: 5px">
+  <table align="center" width="100%">
+          <tr>
+              <!-- <td style="color: #FFF; text-align:left; width:33%; padding-left:20px;" > 
+                  All rights reserved @ <a style="color: #FFF; text-decoration: none;" href="https://gpgcrudrapur.in/" target="_blank">SBS Govt.PG College, Rudrapur</a>
+              </td>-->
+              <td style="text-align:center; width:33%">
+                  <!--Visitors -->
+                <!-- Start of WebFreeCounter Code -->
+                   <!--  <a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=gmeqdxpc&nd=6&style=8" border="0" alt="hit counter"></a> -->
+                <!-- End of WebFreeCounter Code -->
+              </td>
+              <!-- <td style="text-align:right; width:33%; padding-right:20px;"> 
+                  Developed by <a href="https://www.virtuality.org.in/" target="_blank" style="color: #FFF; text-decoration: none;"> Virtuality</a>
+              </td>-->
+          </tr>
+      </table>
+      </div>  
+<!-- <script src="main.js"></script> -->
+<script type="text/javascript" src="main.js"></script>
+        </td>
+      </tr>
+    </table>
 </body>
+
+<script>
+  $(window).load(function() {
+    $('#loading').hide();
+
+    // dronefirstcome()
+  });
+</script>
+
 </html>
